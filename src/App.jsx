@@ -9,13 +9,19 @@ import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { Route, Routes } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 function App() {
+  
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    isDark ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+  }, [isDark])
 
   return (
     <div>
-      <Navbar />
-      <Hero />
+      <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)}   />
       <Routes>
         <Route path = "/" element = {<Home />} />
         <Route path = "/about" element = {<About />} />

@@ -1,9 +1,19 @@
 import React from 'react'
+import Hero from '../components/Hero'
 
 const Home = () => {
   return (
     <div>
-      <h1 className="text-red-500 text-2xl font-times-new-roman"> I am Home </h1>
+      <Hero />
+      <div className="w-full min-h-screen flex flex-col items-center justify-center px-6">
+        <h2 className="text-4xl font-bold mb-6 text-gray-900" data-aos="fade-up">
+          A Little About Me
+        </h2>
+        <p className="max-w-2xl text-center text-gray-600 text-lg" data-aos="fade-up" data-aos-delay="200">
+          I'm a passionate Developer & Designer crafting clean, user-centric experiences. 
+          Focused on building beautiful web apps with a touch of creativity.
+        </p>
+      </div>
     </div>
   )
 }
