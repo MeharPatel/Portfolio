@@ -1,10 +1,16 @@
+:root{
+    --purple-light: rgb(214, 141, 250);
+    /* --hover-light: rgb(190, 71, 250); */
+    --purple-dark: rgb(188, 0, 235);
+    /* --hover-dark: rgb(56, 5, 82); */
+}
+
 .font-times-new-roman{
     font-family: 'Times New Roman', Times, serif;
 }
 
 .dark{
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .resume {
@@ -26,7 +32,17 @@
     width: 100%;
     overflow-x: hidden;
     font-family: 'Mate SC';
-    background-color: rgb(170, 0, 255);
+    background-color: var(--purple-light);
+    color: black;
+    /* background-color: black; */
+  }
+
+  body.dark{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Mate SC';
+    background-color: var(--purple-dark);
     color: white;
     /* background-color: black; */
   }
@@ -37,47 +53,23 @@
   
   /* Navbar */
   .navbar{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+    font-weight: 700;
+  }
+  .dark .navbar{
+    background-color: rgba(0, 0, 0, 0.2);
     color: white;
+    font-weight: 700;
   }
   
-  /* Theme Toggle */
-  .checkbox {
-    opacity: 0;
-    position: absolute;
+  .light .home{
+    background-color: var(--purple-light);
+    height: 100%;
+    overflow: hidden;
   }
-  
-  .checkbox-label {
-    margin-top: 0.5em;
-    background-color: black;
-    width: 3.1em;
-    height: 1.6em;
-    border-radius: 3.1em;
-    position: relative;
-    padding: 0.3em;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .checkbox-label .ball {
-    background-color: rgb(174, 0, 255);
-    width: 1.35em;
-    height: 1.4em;
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-  }
-  
-  .checkbox:checked + .checkbox-label .ball {
-    transform: translateX(1.5em);
-  }
-  
-  .home{
-    background: rgb(170, 0, 255);
+  .dark .home{
+    background-color: var(--purple-dark);
     height: 100%;
     overflow: hidden;
   }
@@ -95,11 +87,20 @@
     margin-top: -1.6em;
   }
   
-  .home .box-cont .box{
+  .light .home .box-cont .box{
     height: 6em;
     width: 5em;
     margin: 0.15em;
-    background: rgb(170, 0, 255);
+    background-color: var(--purple-light);
+    -webkit-clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+    clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+    transition: all 2s ease-out;
+  }
+  .dark .home .box-cont .box{
+    height: 6em;
+    width: 5em;
+    margin: 0.15em;
+    background-color: var(--purple-dark);
     -webkit-clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
     clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
     transition: all 2s ease-out;
@@ -108,8 +109,12 @@
   .home .box-cont .box:hover{
     transition: 0s;
   }
+  .home{
+    transition: 0.5s;
+  }
   
-  .home .box-cont .box:hover{    background-color: rgba(255, 255, 255, 0.4); }
+  .light .home .box-cont .box:hover{    background-color: rgba(255, 255, 255, 0.4); }
+  .dark .home .box-cont .box:hover{    background-color: rgba(255, 255, 255, 0.8); }
   
   .home img{
     position: absolute;
@@ -194,3 +199,31 @@
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.8);
   }
+
+.footer{
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
+.footer-inp{
+  background-color: rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.footer-inp::placeholder{
+  color: black;
+}
+
+.dark .footer{
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.dark .footer-inp{
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.dark .footer-inp::placeholder{
+  color: white;
+}

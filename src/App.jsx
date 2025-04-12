@@ -17,6 +17,7 @@ function App() {
 
   useEffect(() => {
     isDark ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+    isDark ? document.body.classList.remove('light') : document.body.classList.add('light');
   }, [isDark])
 
   return (

@@ -22,9 +22,9 @@ const Footer = () => {
     }
 
   return (
-    <div className="bg-gray-600 text-white p-10 mt-20">
+    <div className="footer bg-gray-600 text-white p-10 mt-20">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-6">Contact Me</h2>
+        <h2 className="text-2xl mb-6">Contact Me</h2>
 
         <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 gap-4">
           <input
@@ -32,21 +32,21 @@ const Footer = () => {
             name="to_name"
             placeholder="Your Name"
             required
-            className="p-2 rounded bg-gray-800 text-white"
+            className="footer-inp p-2 rounded"
           />
           <input
             type="email"
             name="to_email"
             placeholder="Your Email"
             required
-            className="p-2 rounded bg-gray-800 text-white"
+            className="footer-inp p-2 rounded"
           />
           <textarea
             name="message"
             placeholder="Your Message"
             rows="4"
             required
-            className="p-2 rounded bg-gray-800 text-white"
+            className="footer-inp p-2 rounded"
           />
           <button
             type="submit"
