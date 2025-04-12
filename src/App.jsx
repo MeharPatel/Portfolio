@@ -1,8 +1,8 @@
 import './App.css'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Hero from './components/Hero'
 import Projects from './pages/Projects'
+import Education from './pages/Education'
 import Resume from './pages/Resume'
 import Skills from './pages/Skills'
 import Home from './pages/Home'
@@ -29,6 +29,7 @@ function App() {
         <Route path = "/projects" element = {<Projects />} />
         <Route path = "/skills" element = {<Skills />} />
         <Route path = "/resume" element = {<Resume />} />
+        <Route path = "/education" element = {<Education />} />
       </Routes>
       <Footer />
     </div>

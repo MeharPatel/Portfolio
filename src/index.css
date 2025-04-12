@@ -7,11 +7,190 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-button {
+.resume {
     background: none;
     border: 1px solid var(--text-color);
     color: var(--text-color);
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Mate SC';
+    background-color: rgb(170, 0, 255);
+    color: white;
+    /* background-color: black; */
+  }
+  
+  body::-webkit-scrollbar{
+    display: none;
+  }
+  
+  /* Navbar */
+  .navbar{
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+  
+  /* Theme Toggle */
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .checkbox-label {
+    margin-top: 0.5em;
+    background-color: black;
+    width: 3.1em;
+    height: 1.6em;
+    border-radius: 3.1em;
+    position: relative;
+    padding: 0.3em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .checkbox-label .ball {
+    background-color: rgb(174, 0, 255);
+    width: 1.35em;
+    height: 1.4em;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(1.5em);
+  }
+  
+  .home{
+    background: rgb(170, 0, 255);
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .home .box-cont{
+    display: inline-flex;
+    width: 95em;
+    height: 100%;
+    margin-left: -3.3em;
+    margin-top: -1.6em;
+  }
+  
+  .home .box-cont:nth-child(even){
+    margin-left: -0.7em;
+    margin-top: -1.6em;
+  }
+  
+  .home .box-cont .box{
+    height: 6em;
+    width: 5em;
+    margin: 0.15em;
+    background: rgb(170, 0, 255);
+    -webkit-clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+    clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+    transition: all 2s ease-out;
+  }
+  
+  .home .box-cont .box:hover{
+    transition: 0s;
+  }
+  
+  .home .box-cont .box:hover{    background-color: rgba(255, 255, 255, 0.4); }
+  
+  .home img{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    height: 15em;
+    width: 15em;
+    border-radius: 50%;
+    border: 0em solid black;
+    box-shadow: 0.5em 0.5em 2em rgba(0, 0, 0, 0.5);
+  }
+  
+  .home .home-text{
+    font-weight: 500;
+    font-style: italic;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    font-size: 3em;
+  }
+  
+  .home .home-description{
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    width: 30em;
+    font-size: 1.5em;
+  }
+  
+  .sec-head{
+    font-weight: 700;
+  }
+  
+  #edu ul{
+    margin-left: 8em;
+  }
+  
+  #edu ul li::marker{
+    font-size: 2em;
+  }
+  
+  #edu .edu-container{
+    display: flex;
+  }
+  
+  #edu .edu-container img{
+    height: 25em;
+    margin-left: 8em;
+  }
+  
+  #skills .card{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    height: 8em;
+    width: 8em;
+    padding: 2em;
+  }
+  
+  #skills .card img{
+    height: 100%;
+    width: 100%;
+  }
+  
+  #skills .card:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.8);
+  }
+  
+  #projects .card{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    width: 100%;
+  }
+  
+  #projects .card img{
+    height: 100%;
+    width: 100%;
+    filter: invert(5%);
+  }
+  
+  #skills .card:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.8);
   }

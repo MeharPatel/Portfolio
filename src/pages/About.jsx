@@ -11,7 +11,7 @@ const About = () => {
       viewport={{ once: true }}
       className="p-8 text-center"
       >
-      
+
       <div className="about-section p-8 text-center">
         <h2 className="text-4xl font-bold mb-4">About Me</h2>
         <p className="text-lg mb-6">
@@ -30,7 +30,7 @@ const About = () => {
             When I'm not coding, you'll find me sketching designs, exploring nature, or learning something new.
           </p>
 
-          <button className="mt-6 px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition">
+          <button className="resume mt-6 px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition">
             Download Resume
           </button>
         </div>

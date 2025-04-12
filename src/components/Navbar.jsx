@@ -12,7 +12,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}>
 
-      <nav className="flex justify-between items-center bg-white-800 p-4 shadow-lg sticky top-0 z-50">
+      <nav className="navbar flex justify-between items-center bg-white-800 p-4 shadow-lg sticky top-0 z-50">
         <div className="text-2xl font-bold">
           <Link to = "/" className="font-times-new-roman">Mehar Patel</Link>
         </div>
@@ -22,6 +22,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
           <Link to = "/skills" className="hover:text-blue-500 font-times-new-roman">Skills</Link>
           <Link to = "/projects" className="hover:text-blue-500 font-times-new-roman">Projects</Link>
           <Link to = "/resume" className="hover:text-blue-500 font-times-new-roman">Resume</Link>
+          <Link to = "/education" className="hover:text-blue-500 font-times-new-roman">Education</Link>
           <button onClick = {toggleTheme}>
             {isDark ? '🌞' : '🌙'}
           </button>
