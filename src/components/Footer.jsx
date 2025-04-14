@@ -48,15 +48,11 @@ const Footer = () => {
             required
             className="footer-inp p-2 rounded"
           />
-          <button
-            type="submit"
-            className="bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded w-fit">
-            Send
-          </button>
+          <button type="submit" class="send_email focus:outline-black text-sm py-2.5 px-8 rounded w-fit">Send Email</button>
         </form>
 
         {sent && <p className="text-green-400 mt-4">Message sent successfully ✅</p>}
-        <p className="text-gray-400 text-sm mt-10">© {new Date().getFullYear()} Mehar Patel. All rights reserved.</p>
+        <p className="text-sm mt-10">© {new Date().getFullYear()} Mehar Patel. All rights reserved.</p>
       </div>
     </div>
   )

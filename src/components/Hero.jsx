@@ -158,7 +158,7 @@ const Hero = () => {
                 </div>
                 <div className="home-text">Mehar Patel</div>
                 <div className="home-description">
-                    <p className='mb-1'>I am Computer Science and Engineer.</p>
+                    <p className='mb-1'>I am a Developer.</p>
                     <p className='mb-1'>My Ambition is my passion and I hope to create innovative designs with Mind blowing logics.</p>
                     <p>I am a team player and adaptive of the environment around me.</p>
                 </div>

@@ -164,40 +164,68 @@
     height: 25em;
     margin-left: 8em;
   }
-  
-  #skills .card{
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    height: 8em;
-    width: 8em;
-    padding: 2em;
+
+  .skill_card{
+    background-color: var(--purple-light);
   }
-  
-  #skills .card img{
-    height: 100%;
-    width: 100%;
+  .dark .skill_card{
+    background-color: var(--purple-dark);
   }
-  
-  #skills .card:hover{
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.8);
+
+  .skill_card_inner{
+    background-color: rgb(255, 255, 255);
   }
-  
-  #projects .card{
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    width: 100%;
+
+  .skill_card:hover{
+    background-color: rgba(255, 255, 255, 0.6);
   }
-  
-  #projects .card img{
-    height: 100%;
-    width: 100%;
-    filter: invert(5%);
+
+  .experience_card{
+    background-color: rgba(255, 255, 255, 0.6);
   }
-  
-  #skills .card:hover{
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.8);
+
+  .project_card{
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 75em;
+    color: black;
+  }
+
+  .dark .project_card{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 75em;
+    color: white;
+  }
+
+  .visit_btn{
+    border-color: black;
+  }
+  .dark .visit_btn{
+    border-color: white;
+  }
+
+  .project_img1{
+    background-image: url("/jobex.png");
+    background-position: center;
+  }
+  .project_img2{
+    background-image: url("/admissionportal.png");
+    background-position: center;
+  }
+  .project_img3{
+    background-image: url("/foodie.png");
+    background-position: center;
+  }
+  .project_img4{
+    background-image: url("/todo.png");
+    background-position: center;
+  }
+  .project_img5{
+    background-image: url("/portfolio.png");
+    background-position: center;
+  }
+  .project_img6{
+    background-image: url("/artsy.png");
+    background-position: center;
   }
 
 .footer{
@@ -226,4 +254,21 @@
 
 .dark .footer-inp::placeholder{
   color: white;
+}
+
+.footer .send_email{
+  background-color: rgba(179, 25, 255, 0.9);
+  border-bottom: 4px solid rgba(95, 0, 143, 0.9);
+  border-right: 4px solid rgba(95, 0, 143, 0.9);
+}
+.footer .send_email:hover{
+  background-color: rgba(179, 25, 255, 0.7);
+}
+.dark .footer .send_email{
+  background-color: rgba(194, 72, 255, 0.9);
+  border-bottom: 4px solid rgba(44, 0, 66, 0.9);
+  border-right: 4px solid rgba(37, 0, 56, 0.9);
+}
+.dark .footer .send_email:hover{
+  background-color: rgba(222, 155, 255, 0.7);
 }

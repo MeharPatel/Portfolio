@@ -2,9 +2,6 @@ import './App.css'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
-import Education from './pages/Education'
-import Resume from './pages/Resume'
-import Skills from './pages/Skills'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -28,9 +25,6 @@ function App() {
         <Route path = "/about" element = {<About />} />
         <Route path = "/contact" element = {<Contact />} />
         <Route path = "/projects" element = {<Projects />} />
-        <Route path = "/skills" element = {<Skills />} />
-        <Route path = "/resume" element = {<Resume />} />
-        <Route path = "/education" element = {<Education />} />
       </Routes>
       <Footer />
     </div>

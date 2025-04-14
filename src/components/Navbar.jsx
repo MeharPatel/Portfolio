@@ -19,10 +19,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
         <div className="space-x-6 text-lg">
           <Link to = "/about" className="hover:text-blue-500 font-times-new-roman">About</Link>
           <Link to = "/contact" className="hover:text-blue-500 font-times-new-roman">Contact</Link>
-          <Link to = "/skills" className="hover:text-blue-500 font-times-new-roman">Skills</Link>
           <Link to = "/projects" className="hover:text-blue-500 font-times-new-roman">Projects</Link>
-          <Link to = "/resume" className="hover:text-blue-500 font-times-new-roman">Resume</Link>
-          <Link to = "/education" className="hover:text-blue-500 font-times-new-roman">Education</Link>
           <button onClick = {toggleTheme}>
             {isDark ? '🌞' : '🌙'}
           </button>
