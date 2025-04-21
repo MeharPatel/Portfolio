@@ -12,7 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "aos": "^2.3.4",
-    "framer-motion": "^12.6.3",
+    "framer-motion": "^12.7.4",
     "my-portfolio": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

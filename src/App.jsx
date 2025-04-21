@@ -3,6 +3,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import Home from './pages/Home'
+import Try from './pages/Try'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { Route, Routes } from 'react-router-dom'
@@ -18,13 +19,16 @@ function App() {
   }, [isDark])
 
   return (
-    <div>
+    <div> 
+
+
       <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)}   />
       <Routes>
         <Route path = "/" element = {<Home />} />
         <Route path = "/about" element = {<About />} />
         <Route path = "/contact" element = {<Contact />} />
         <Route path = "/projects" element = {<Projects />} />
+        <Route path = "/try" element = {<Try />} />
       </Routes>
       <Footer />
     </div>
