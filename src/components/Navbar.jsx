@@ -1,28 +1,18 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import { Menu, X } from "lucide-react";
-// import ThemeToggle from "./ThemeToggle"; // Adjust path if needed
+import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle"; // Adjust path if needed
 // import { Button } from "@/components/ui/button"; // Adjust path if needed
 import { motion } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   // Toggle mobile menu
   const toggleMenu = () => setIsOpen(!isOpen);
-
-  // Navigation links
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Experience", path: "/experience" },
-    { name: "Projects", path: "/projects" },
-    { name: "Skills", path: "/skills" },
-    { name: "Contact", path: "/contact" },
-  ];
 
   // Detect scroll to change navbar style
   useEffect(() => {
@@ -82,31 +72,40 @@ const Navbar = () => {
             to="/"
             className="interactive text-2xl font-bold text-primary flex items-center"
           >
-            <span className="tracking-tight">PixelPurple</span>
-            <span className="text-primary text-3xl">.dev</span>
+            <span className="tracking-tight">Mehar Patel </span>
+            <span className="text-primary text-3xl"> Portfolio</span>
           </Link>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`interactive px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  location.pathname === link.path
-                    ? "text-primary font-bold"
-                    : "text-foreground/80 hover:text-primary hover:bg-primary/10"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            {/* <ThemeToggle className="ml-2" /> */}
+            
+              <button
+                key={homeRef} onClick={() => scrollTo(homeRef)}
+                className={`interactive px-4 py-2 rounded-md text-sm font-medium transition-colors`}>
+                Home
+              </button>
+              <button
+                key={aboutRef} onClick={() => scrollTo(aboutRef)}
+                className={`interactive px-4 py-2 rounded-md text-sm font-medium transition-colors`}>
+                About
+              </button>
+              <button
+                key={projectRef} onClick={() => scrollTo(projectRef)}
+                className={`interactive px-4 py-2 rounded-md text-sm font-medium transition-colors`}>
+                Projects
+              </button>
+              <button
+                key={contactRef} onClick={() => scrollTo(contactRef)}
+                className={`interactive px-4 py-2 rounded-md text-sm font-medium transition-colors`}>
+                Contact
+              </button>
+            
+            
           </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center">
-            {/* <ThemeToggle className="mr-2" /> */}
+            <ThemeToggle className="mr-2" />
             <button
               variant="ghost"
               size="icon"
@@ -127,20 +126,39 @@ const Navbar = () => {
           className="md:hidden overflow-hidden"
         >
           <div className="pt-3 pb-2 space-y-1">
-            {navLinks.map((link) => (
-              <motion.div key={link.path} variants={itemVariants}>
-                <Link
-                  to={link.path}
-                  className={`interactive block px-4 py-2 rounded-md text-base font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? "bg-primary/20 text-primary"
-                      : "text-foreground/80 hover:bg-primary/10 hover:text-primary"
-                  }`}
-                >
-                  {link.name}
-                </Link>
+            
+              <motion.div key={homeRef} variants={itemVariants}>
+                <button
+                  onClick={() => scrollTo(homeRef)}
+                  className={`interactive block px-4 py-2 rounded-md text-base font-medium transition-colors`}>
+                  Home
+                </button>
               </motion.div>
-            ))}
+              
+              <motion.div key={aboutRef} variants={itemVariants}>
+                <button
+                  onClick={() => scrollTo(aboutRef)}
+                  className={`interactive block px-4 py-2 rounded-md text-base font-medium transition-colors`}>
+                  About
+                </button>
+              </motion.div>
+
+              <motion.div key={projectRef} variants={itemVariants}>
+                <button
+                  onClick={() => scrollTo(projectRef)}
+                  className={`interactive block px-4 py-2 rounded-md text-base font-medium transition-colors`}>
+                  Projects
+                </button>
+              </motion.div>
+
+              <motion.div key={contactRef} variants={itemVariants}>
+                <button
+                  onClick={() => scrollTo(contactRef)}
+                  className={`interactive block px-4 py-2 rounded-md text-base font-medium transition-colors`}>
+                  Contact
+                </button>
+              </motion.div>
+            
           </div>
         </motion.div>
       </div>

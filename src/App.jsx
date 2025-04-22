@@ -7,30 +7,42 @@ import Try from './pages/Try'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { Route, Routes } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useRef } from 'react'
+import Layout from './components/Layout'
 
 function App() {
-  
-  const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
-    isDark ? document.body.classList.add('dark') : document.body.classList.remove('dark');
-    isDark ? document.body.classList.remove('light') : document.body.classList.add('light');
-  }, [isDark])
+  const homeRef = useRef();
+  const aboutRef = useRef();
+  const projectRef = useRef();
+  const contactRef = useRef();
+
+  const scrollTo = (ref) => {
+    ref.current.scrollIntoView({ behavior : 'smooth' })
+  };
 
   return (
     <div> 
+    <Layout homeRef = {homeRef} aboutRef = {aboutRef} projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo}>
 
 
-      <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)}   />
-      <Routes>
-        <Route path = "/" element = {<Home />} />
-        <Route path = "/about" element = {<About />} />
-        <Route path = "/contact" element = {<Contact />} />
-        <Route path = "/projects" element = {<Projects />} />
-        <Route path = "/try" element = {<Try />} />
-      </Routes>
+
+      
+      <section ref = {homeRef}>
+        <Home projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo} />
+      </section>
+      <Try />
+      <section ref = {aboutRef}>
+        <About />
+      </section>
+      <section ref = {projectRef}>
+        <Projects />
+      </section>
+      <section ref = {contactRef}>
+        <Contact />
+      </section>
       <Footer />
+    </Layout>
     </div>
   )
 }
