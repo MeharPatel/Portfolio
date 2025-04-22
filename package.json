@@ -12,9 +12,11 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "aos": "^2.3.4",
+    "class-variance-authority": "^0.7.1",
     "framer-motion": "^12.7.4",
     "lucide-react": "^0.503.0",
     "my-portfolio": "file:",
+    "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.0"

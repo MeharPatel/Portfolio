@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle"; // Adjust path if needed
-// import { Button } from "@/components/ui/button"; // Adjust path if needed
+// import { Button } from "./ui/button"; // Adjust path if needed
 import { motion } from "framer-motion";
 
 const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
@@ -113,7 +113,7 @@ const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
               aria-label="Menu"
               className="interactive p-2"
             >
-              {/* {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />} */}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>

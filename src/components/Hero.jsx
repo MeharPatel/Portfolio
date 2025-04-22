@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+// import { Button } from './ui/button';
 
 const Hero = ({ projectRef }) => {
     const targetRef = useRef(null);
@@ -193,7 +194,7 @@ const Hero = ({ projectRef }) => {
               asChild
               className="bg-primary hover:bg-primary/90 text-white px-6 py-6 rounded-full text-lg relative overflow-hidden group"
             >
-              <button onClick={() => scrollTo()}></button></button>>
+              <button onClick={() => scrollTo(projectRef)}>
                 <span className="relative z-10">See My Work</span>
                 <motion.div
                   className="absolute inset-0 bg-white/20"
@@ -201,7 +202,7 @@ const Hero = ({ projectRef }) => {
                   whileHover={{ x: "100%" }}
                   transition={{ duration: 0.5 }}
                 />
-              </Link>
+              </button>
             </button>
             <button
               asChild

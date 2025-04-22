@@ -61,7 +61,7 @@ const CustomCursor = () => {
       <div 
         className={`
           fixed pointer-events-none z-50 rounded-full mix-blend-difference
-          transition-transform duration-150 flex items-center justify-center
+          transition-transform duration-150 flex items-center justify-center bg-blue-700
           ${isVisible ? 'opacity-100' : 'opacity-0'}
           ${isHovering ? 'w-8 h-8 bg-white' : 'w-4 h-4 bg-primary animate-pulse-cursor'}
         `}
@@ -76,7 +76,7 @@ const CustomCursor = () => {
       <div 
         className={`
           fixed pointer-events-none z-40 rounded-full bg-primary/30
-          w-10 h-10 transition-all duration-300 ease-out
+          w-10 h-10 transition-all duration-300 ease-out bg-red-500
           ${isVisible ? 'opacity-30' : 'opacity-0'}
           ${isHovering ? 'scale-150' : 'scale-100'}
         `}
