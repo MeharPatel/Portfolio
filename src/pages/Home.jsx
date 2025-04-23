@@ -1,7 +1,9 @@
-import React, { useRef } from 'react'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 
-const Home = ({ projectRef, contactRef, scrollTo }) => {
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const Home = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -14,15 +16,7 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
     springConfig
   );
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,14 +28,37 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
     },
   };
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const techRef = useRef(null);
+
+  // Detect when tech stack is in view
+  const isInView = useInView(techRef, { once: true, margin: "-50px" });
+
+    const techVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
+  // Moving background animations
   const floatingOrbs = Array(5).fill(null);
 
   return (
-    <section>
-      <div ref={targetRef} className='relative min-h-screen overflow-hidden'>
-              
-        {floatingOrbs.map((_, i) => (
-          <motion.div
+    <section ref={targetRef} className="relative min-h-screen overflow-hidden">
+      {/* Animated background orbs */}
+      {floatingOrbs.map((_, i) => (
+        <motion.div
           key={i}
           className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-30"
           animate={{
@@ -61,331 +78,550 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
             background: `linear-gradient(${Math.random() * 360}deg, var(--primary), var(--accent))`,
-          }} />
-          ))}
-          <motion.div
+          }}
+        />
+      ))}
+
+      {/* Main content */}
+      <div className="container relative z-10 px-4 md:px-6 py-10 md:py-20">
+        <motion.div
           className="max-w-4xl mx-auto"
           variants={containerVariants}
           initial="hidden"
-          animate="visible">
-            {/* Profile section with spinning sketch */}
-            <motion.div
+          animate="visible"
+        >
+          {/* Profile section with spinning sketch */}
+          <motion.div 
             className="flex flex-col md:flex-row items-center gap-12 mb-12"
-            variants={itemVariants}>
-              {/* Left side - Profile image */}
-              <div className="relative group">
-                <div
-                className="w-48 h-48 mb-0 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl transition-all duration-300 group-hover:scale-105">
-                  <img
-                  src="/mehar.jpg" // Replace with your image
+            variants={itemVariants}
+          >
+            {/* Left side - Profile image */}
+            <div className="relative group">
+              <motion.div 
+                className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl transition-all duration-300 group-hover:scale-105">
+                <img
+                  src="/mehar.jpg"
                   alt="Profile"
-                  className="w-full h-full object-cover" />
-                </div>
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
               
-                  {/* Decorative rings */}
-                <motion.div
+              {/* Decorative rings */}
+              <motion.div 
                 className="absolute -inset-4 border-2 border-dashed border-primary/30 rounded-full"
                 style={{ rotate }}
                 animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}/>
-              </div>
-                
-              {/* Right side - Name and intro */}
-              <div className="text-center md:text-left">
-                <motion.h1
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+            </div>
+
+            {/* Right side - Name and intro */}
+            <div className="text-center md:text-left">
+              <motion.h1 
                 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6"
-                variants={itemVariants}>
-                  <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-pink-500 to-blue-500 bg-[length:200%_auto] animate-[gradient_3s_ease_infinite]">
-                    Hi, I'm Mehar Patel
-                  </span>
-                  <br />
-                  <span className="text-3xl md:text-4xl lg:text-5xl text-foreground/80">
-                    I Stack the Full Stack!
-                  </span>
-                </motion.h1>
+                variants={itemVariants}
+              >
+                <span className="inline-block from-primary via-accent to-primary bg-[length:200%_auto]">
+                  Hi, I'm Mehar Patel
+                </span>
+                <br />
+                <span className="text-3xl md:text-4xl lg:text-5xl text-foreground/80">
+                  I Stack the Full Stack!
+                </span>
+              </motion.h1>
               
-                <motion.p
+              <motion.p 
                 className="text-xl md:text-2xl mb-4 text-foreground/80 max-w-2xl"
-                variants={itemVariants}>
-                  Full-stack developer crafting pixel-perfect apps with a side of humor.
-                </motion.p>
-              
-                            
-              </div>
-            </motion.div>
-            <motion.div
+                variants={itemVariants}
+              >
+                Full-stack developer crafting pixel-perfect apps with a side of humor.
+              </motion.p>
+
+            </div>
+          </motion.div>
+
+          {/* Spinning sketch illustration */}
+          <motion.div 
             className="relative w-64 h-64 mx-auto my-10 group"
             whileHover={{ scale: 1.05 }}
             animate={{ rotate: [0, 360] }}
-            transition={{
-              rotate: {
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-              },
-            }}>
-              <div className="w-full h-full rounded-2xl bg-secondary p-4 rotate-2 shadow-lg transform transition-transform group-hover:rotate-6">
-                <div className="w-full h-full rounded-lg bg-background dark:bg-slate-800 p-4 flex items-center justify-center relative overflow-hidden">
-                  <svg
-                  viewBox="0 0 100 100"
+            transition={{ 
+              rotate: { 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }
+            }}
+          >
+            <div className="w-full h-full rounded-2xl bg-secondary p-4 rotate-2 shadow-lg transform transition-transform group-hover:rotate-6">
+              <div className="w-full h-full rounded-lg bg-background dark:bg-slate-800 p-4 flex items-center justify-center relative overflow-hidden">
+                {/* Code sketch */}
+                <svg 
+                  viewBox="0 0 100 100" 
                   className="w-full h-full text-primary/80"
-                  style={{ maxWidth: "150px" }}>
-                    <motion.path
-                    d="M20,70 L80,70 L80,40 L20,40 Z"
-                    fill="none"
-                    stroke="currentColor"
+                  style={{ maxWidth: "150px" }}
+                >
+                  <motion.path 
+                    d="M20,70 L80,70 L80,40 L20,40 Z" 
+                    fill="none" 
+                    stroke="currentColor" 
                     strokeWidth="2"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }} />
-                      <motion.path
-                      d="M10,70 L90,70 L90,75 L10,75 Z"
-                      fill="currentColor"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 1, delay: 0.5 }} />
-                        <motion.path
-                        d="M30,50 L45,50 M30,55 L50,55 M30,60 L40,60"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 1.5, delay: 1, repeat: Infinity, repeatType: "reverse" }} />
-                  </svg>
-                                            
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-shine" />
-                </div>                         
+                    transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                  />
+                  <motion.path 
+                    d="M10,70 L90,70 L90,75 L10,75 Z" 
+                    fill="currentColor"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                  />
+                  <motion.path 
+                    d="M30,50 L45,50 M30,55 L50,55 M30,60 L40,60" 
+                    stroke="currentColor" 
+                    strokeWidth="2"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, delay: 1, repeat: Infinity, repeatType: "reverse" }}
+                  />
+                </svg>
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-shine" />
               </div>
-                                        
-            </motion.div>
-            <motion.p
-            className="text-center text-lg italic text-primary/90 mb-8"
-            variants={itemVariants}>
-              "Oh yeah! I sketch too sometimes haha!"
-            </motion.p>
+            </div>
+          </motion.div>
 
-            <motion.div
+          <motion.p
+                className="text-lg italic text-primary/90 mb-8"
+                variants={itemVariants}
+              >
+                "Oh yeah! I sketch too sometimes haha!"
+              </motion.p>
+          
+          {/* CTA Buttons */}
+          <motion.div 
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
-            variants={itemVariants}>
-              <button
-              asChild
-              className="bg-primary hover:bg-primary/90 text-white px-6 py-6 rounded-full text-lg relative overflow-hidden group">
-                <button onClick={() => scrollTo(projectRef)}>
-                  <span className="relative z-10">See My Work</span>
-                  <motion.div
+            variants={itemVariants}
+          >
+            <button asChild className="bg-primary hover:bg-primary/90 text-white px-6 py-6 rounded-full text-lg relative overflow-hidden group">
+              <Link to="/projects">
+                <span className="relative z-10">See My Work</span>
+                <motion.div 
                   className="absolute inset-0 bg-white/20"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.5 }} />
-                </button>
-              </button>
-              <button
-              asChild
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary/10 px-6 py-6 rounded-full text-lg relative overflow-hidden group">
-                <button onClick={() => scrollTo(contactRef)}>
-                  <span className="relative z-10">Get in Touch</span>
-                  <motion.div
+                  transition={{ duration: 0.5 }}
+                />
+              </Link>
+            </button>
+            <button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10 px-6 py-6 rounded-full text-lg relative overflow-hidden group">
+              <Link to="/contact">
+                <span className="relative z-10">Get in Touch</span>
+                <motion.div 
                   className="absolute inset-0 bg-primary/5"
                   initial={{ scale: 0 }}
                   whileHover={{ scale: 1 }}
-                  transition={{ duration: 0.3 }} />
-                </button>
-              </button>
-            </motion.div>
-
+                  transition={{ duration: 0.3 }}
+                />
+              </Link>
+            </button>
           </motion.div>
+        </motion.div>
+      </div>
 
-        </div>
+  
+        <motion.div
+              className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-secondary/50 backdrop-blur-md border border-border py-2 px-4 rounded-full hidden md:flex items-center space-x-3"
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1 }}>
+              <motion.div className="flex items-center space-x-3" variants={itemVariants}>
+                <span className="text-xs text-foreground/60">Tech Stack:</span>
+                {['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'].map((tech, i) => (
+                  <motion.span
+                    key={tech}
+                    className="text-xs font-medium bg-background/50 border border-border rounded-full px-3 py-1"
+                    custom={i}
+                    variants={techVariants}
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </motion.div> 
+    </section>
+  );
+};
 
-        <div id='home' className="home container-fluid">
-                <div className="box-cont">
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                </div>
-                <div className="box-cont">
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                </div>
-                <div className="box-cont">
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                </div>
-                <div className="box-cont">
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                </div>
-                <div className="box-cont">
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                </div>
-                <div className="box-cont">
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                </div>
-                <div className="box-cont">
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                </div>
-                <div className="box-cont">
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                    <div className='box'></div>
-                </div>
-              </div>
-
-        </section>
-  )
-}
-
-export default Home
+export default Home;
 
 
 
 
 
 
+// import React, { useRef } from 'react'
+// import { motion, useInView, useScroll, useSpring, useTransform } from 'framer-motion'
+
+// const Home = ({ projectRef, contactRef, scrollTo }) => {
+//   const targetRef = useRef(null);
+//   const { scrollYProgress } = useScroll({
+//     target: targetRef,
+//     offset: ["start start", "end start"],
+//   });
+
+//   const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
+//   const rotate = useSpring(
+//     useTransform(scrollYProgress, [0, 1], [0, 360]),
+//     springConfig
+//   );
+
+//   const itemVariants = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: {
+//       opacity: 1,
+//       y: 0,
+//       transition: { duration: 0.6, ease: "easeOut" },
+//     },
+//   };
+
+//   const containerVariants = {
+//     hidden: { opacity: 0 },
+//     visible: {
+//       opacity: 1,
+//       transition: {
+//         staggerChildren: 0.2,
+//         delayChildren: 0.3,
+//       },
+//     },
+//   };
+
+//   const floatingOrbs = Array(5).fill(null);
 
 
 
-// import React from 'react'
-// import Hero from '../components/Hero'
-
-// const Home = () => {
 //   return (
-//     <div>
-//       <Hero />
-//       <div className="w-full min-h-screen flex flex-col items-center justify-center px-6">
-//         <h2 className="text-4xl mb-6 .font-times-new-roman" data-aos="fade-up">
-//           <b>Get to know Me</b>
-//         </h2>
-//         <p className="max-w-2xl text-center text-lg" data-aos="fade-up" data-aos-delay="200">
-//         Curious, creative, and just getting started — I have one year of experience under my belt and a whole lot of passion for what’s next. I love working with teams that spark ideas off each other and turn good work into something great. Every project is a chance to learn, grow, and push a little further, and I’m excited to keep adding new skills along the way.
-//         </p>
-//         <p className="max-w-2xl text-center text-lg" data-aos="fade-up" data-aos-delay="200">
-//         I'm someone who quietly observes, thinks deeply, and comes up with creative ideas that adapt to the situation. Even though I'm more of an introvert at heart, I genuinely get along with all kinds of people and love being part of a team. I believe that a calm approach, a curious mind, and a willingness to keep learning can turn small moments into meaningful achievements.
-//         </p>
-//       </div>
-//     </div>
+//     <section>
+//       <div ref={targetRef} className='relative min-h-screen overflow-hidden'>
+              
+//         {floatingOrbs.map((_, i) => (
+//           <motion.div
+//           key={i}
+//           className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-30"
+//           animate={{
+//             x: [0, Math.random() * 400 - 200],
+//             y: [0, Math.random() * 400 - 200],
+//             scale: [1, Math.random() * 0.5 + 1],
+//           }}
+//           transition={{
+//             duration: Math.random() * 10 + 10,
+//             repeat: Infinity,
+//             repeatType: "reverse",
+//             ease: "easeInOut",
+//           }}
+//           style={{
+//             width: `${Math.random() * 300 + 100}px`,
+//             height: `${Math.random() * 300 + 100}px`,
+//             left: `${Math.random() * 100}%`,
+//             top: `${Math.random() * 100}%`,
+//             background: `linear-gradient(${Math.random() * 360}deg, var(--primary), var(--accent))`,
+//           }} />
+//         ))}
+//           <motion.div
+//           className="max-w-4xl mx-auto"
+//           variants={containerVariants}
+//           initial="hidden"
+//           animate="visible">
+//             {/* Profile section with spinning sketch */}
+//             <motion.div
+//             className="flex flex-col md:flex-row items-center gap-12 mb-12"
+//             variants={itemVariants}>
+//               {/* Left side - Profile image */}
+//               <div className="relative group">
+//                 <div
+//                 className="w-48 h-48 mb-0 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl transition-all duration-300 group-hover:scale-105">
+//                   <img
+//                   src="/mehar.jpg" // Replace with your image
+//                   alt="Profile"
+//                   className="w-full h-full object-cover" />
+//                 </div>
+              
+//                   {/* Decorative rings */}
+//                 <motion.div
+//                 className="absolute -inset-4 border-2 border-dashed border-primary/30 rounded-full"
+//                 style={{ rotate }}
+//                 animate={{ rotate: 360 }}
+//                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}/>
+//               </div>
+                
+//               {/* Right side - Name and intro */}
+//               <div className="text-center md:text-left">
+//                 <motion.h1
+//                 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6"
+//                 variants={itemVariants}>
+//                   <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-pink-500 to-blue-500 bg-[length:200%_auto] animate-[gradient_3s_ease_infinite]">
+//                     Hi, I'm Mehar Patel
+//                   </span>
+//                   <br />
+//                   <span className="text-3xl md:text-4xl lg:text-5xl text-foreground/80">
+//                     I Stack the Full Stack!
+//                   </span>
+//                 </motion.h1>
+              
+//                 <motion.p
+//                 className="text-xl md:text-2xl mb-4 text-foreground/80 max-w-2xl"
+//                 variants={itemVariants}>
+//                   Full-stack developer crafting pixel-perfect apps with a side of humor.
+//                 </motion.p>
+              
+                            
+//               </div>
+//             </motion.div>
+//             <motion.div
+//             className="relative w-64 h-64 mx-auto my-10 group"
+//             whileHover={{ scale: 1.05 }}
+//             animate={{ rotate: [0, 360] }}
+//             transition={{
+//               rotate: {
+//               duration: 20,
+//               repeat: Infinity,
+//               ease: "linear",
+//               },
+//             }}>
+//               <div className="w-full h-full rounded-2xl bg-secondary p-4 rotate-2 shadow-lg transform transition-transform group-hover:rotate-6">
+//                 <div className="w-full h-full rounded-lg bg-background dark:bg-slate-800 p-4 flex items-center justify-center relative overflow-hidden">
+//                   <svg
+//                   viewBox="0 0 100 100"
+//                   className="w-full h-full text-primary/80"
+//                   style={{ maxWidth: "150px" }}>
+//                     <motion.path
+//                     d="M20,70 L80,70 L80,40 L20,40 Z"
+//                     fill="none"
+//                     stroke="currentColor"
+//                     strokeWidth="2"
+//                     initial={{ pathLength: 0 }}
+//                     animate={{ pathLength: 1 }}
+//                     transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }} />
+//                       <motion.path
+//                       d="M10,70 L90,70 L90,75 L10,75 Z"
+//                       fill="currentColor"
+//                       initial={{ opacity: 0 }}
+//                       animate={{ opacity: 1 }}
+//                       transition={{ duration: 1, delay: 0.5 }} />
+//                         <motion.path
+//                         d="M30,50 L45,50 M30,55 L50,55 M30,60 L40,60"
+//                         stroke="currentColor"
+//                         strokeWidth="2"
+//                         initial={{ pathLength: 0 }}
+//                         animate={{ pathLength: 1 }}
+//                         transition={{ duration: 1.5, delay: 1, repeat: Infinity, repeatType: "reverse" }} />
+//                   </svg>
+                                            
+//                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-shine" />
+//                 </div>                         
+//               </div>
+                                        
+//             </motion.div>
+//             <motion.p
+//             className="text-center text-lg italic text-primary/90 mb-8"
+//             variants={itemVariants}>
+//               "Oh yeah! I sketch too sometimes haha!"
+//             </motion.p>
+
+//             <motion.div
+//             className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+//             variants={itemVariants}>
+//               <button
+//               asChild
+//               className="bg-primary hover:bg-primary/90 text-white px-6 py-6 rounded-full text-lg relative overflow-hidden group">
+//                 <button onClick={() => scrollTo(projectRef)}>
+//                   <span className="relative z-10">See My Work</span>
+//                   <motion.div
+//                   className="absolute inset-0 bg-white/20"
+//                   initial={{ x: "-100%" }}
+//                   whileHover={{ x: "100%" }}
+//                   transition={{ duration: 0.5 }} />
+//                 </button>
+//               </button>
+//               <button
+//               asChild
+//               variant="outline"
+//               className="border-primary text-primary hover:bg-primary/10 px-6 py-6 rounded-full text-lg relative overflow-hidden group">
+//                 <button onClick={() => scrollTo(contactRef)}>
+//                   <span className="relative z-10">Get in Touch</span>
+//                   <motion.div
+//                   className="absolute inset-0 bg-primary/5"
+//                   initial={{ scale: 0 }}
+//                   whileHover={{ scale: 1 }}
+//                   transition={{ duration: 0.3 }} />
+//                 </button>
+//               </button>
+//             </motion.div>
+
+//             
+
+//           </motion.div>
+
+//         </div>
+
+//         {/* <div id='home' className="home container-fluid">
+//                 <div className="box-cont">
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                 </div>
+//                 <div className="box-cont">
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                 </div>
+//                 <div className="box-cont">
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                 </div>
+//                 <div className="box-cont">
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                 </div>
+//                 <div className="box-cont">
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                 </div>
+//                 <div className="box-cont">
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                 </div>
+//                 <div className="box-cont">
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                 </div>
+//                 <div className="box-cont">
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                     <div className='box'></div>
+//                 </div>
+//               </div> */}
+
+//         </section>
 //   )
 // }
 

@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import ThemeToggle from "./ThemeToggle"; // Adjust path if needed
 // import { Button } from "./ui/button"; // Adjust path if needed
 import { motion } from "framer-motion";
@@ -57,6 +57,12 @@ const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
     closed: { opacity: 0, y: -10 },
   };
 
+  const socials = [
+    { href: 'https://github.com', icon: Github, label: 'GitHub' },
+    { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
+    { href: 'mailto:hello@example.com', icon: Mail, label: 'Email' },
+  ];
+
   return (
     <nav
       className={`fixed w-full z-40 transition-all duration-300 ${
@@ -72,7 +78,7 @@ const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
             to="/"
             className="interactive text-2xl font-bold text-primary flex items-center"
           >
-            <span className="tracking-tight">Mehar Patel </span>
+            <span className="tracking-tight">Mehar </span>
             <span className="text-primary text-3xl"> Portfolio</span>
           </Link>
 
@@ -99,8 +105,24 @@ const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
                 className={`interactive px-4 py-2 rounded-md text-sm font-medium transition-colors`}>
                 Contact
               </button>
+
+              <ThemeToggle className="mr-2" />
             
-            
+              <div className="flex items-center space-x-4 pl-2 border-l border-border">
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/70 hover:text-accent transition-colors"
+                  >
+                    <social.icon size={20} />
+                  </a>
+                ))}
+              </div>
+
           </div>
 
           {/* Mobile menu button */}

@@ -1,29 +1,44 @@
-import { useState, useEffect } from 'react';
+// src/components/ThemeToggle.jsx
+import React, { useState, useEffect } from "react";
 import { Sun, Moon } from 'lucide-react';
-import { useTheme } from 'next-themes';
-// import { Button } from './ui/button';
 
-const ThemeToggle = ({ className = '' }) => {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+const ThemeToggle = ({ className }) => {
+  // State to track theme
+  const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  // Load theme from localStorage on mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
-  if (!mounted) return (
-    <button variant="ghost" size="icon" aria-label="Toggle theme" className={className}>
-      <div className="h-5 w-5" />
-    </button>
-  );
+  // Toggle theme on button click
+  const toggleTheme = () => {
+    const newTheme = !isDark ? "dark" : "light";
+    setIsDark(!isDark);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark");
+  };
 
   return (
     <button
       variant="ghost"
       size="icon"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
-      className={`interactive ${className}`}
+      onClick={toggleTheme}
+      className={`p-2 rounded-full text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] ${className}`}
+      aria-label="Toggle theme"
     >
-      {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+      {isDark ? (
+        <Sun className="h-5 w-5" />
+      ) : (
+        <Moon className="h-5 w-5" />
+      )}
     </button>
   );
 };

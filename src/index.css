@@ -1,3 +1,8 @@
+/* @import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico|Dancing Script|Lumanosimo|Satisfy|Great Vibes|Josefin Sans|Courgette|Mate SC|Quantico'); */
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
 @layer base {
   :root {
     /* Light theme variables */
@@ -31,10 +36,17 @@
 
     --radius: 0.5rem;
 
-    --portfolio-light: #E9D5FF;
-    --portfolio-accent: #A855F7;
-    --portfolio-dark: #4C1D95;
-    --portfolio-darkAccent: #C084FC;
+    --portfolio-back: #E9D5FF;
+    --portfolio-accent: #d09dff;
+    
+    --text: #35005a;
+
+    --scrollbar-track: #E9D5FF; /* Light theme scrollbar track */
+    --scrollbar-thumb: #A855F7;
+
+    --font-Quantico: "Quantico", sans-serif;
+    --transparent-bg: rgba(0, 0, 0, 0.2);
+    --hover-transparent-bg: rgba(0, 0, 0, 0.3);
   }
 
   .dark {
@@ -66,6 +78,17 @@
     --border: 276 30% 25%;
     --input: 276 30% 25%;
     --ring: 270 95% 75%;
+
+    --scrollbar-track: #4C1D95; /* Dark theme scrollbar track */
+    --scrollbar-thumb: #C084FC;
+
+    --portfolio-back: #200036;
+    --portfolio-accent: #54008b;
+
+    --text: #d09dff;
+
+    --transparent-bg: rgba(255, 255, 255, 0.2);
+    --hover-transparent-bg: rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -156,8 +179,8 @@
 }
 
 @keyframes pulse-cursor {
-  0%, 100% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.2); opacity: 1; }
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.4); opacity: 1; }
 }
 
 @keyframes fade-in {
@@ -232,12 +255,98 @@
   }
 
 body{
-  background-image: linear-gradient(45deg, rgb(193, 34, 207), rgb(240, 192, 255), rgb(193, 34, 207), rgb(240, 192, 255), rgb(193, 34, 207), rgb(245, 211, 255));
+  background-image: linear-gradient(45deg, var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back));
+  color: var(--text);
+}
+
+.skill-text{
+  font-family: 'Quantico', sans-serif;
+  background-color: var(--transparent-bg);
+  border-radius: 12px;
+}
+
+.skill-text:hover{
+  background-color: var(--hover-transparent-bg);
 }
 
 
-  
-  
+
+/* Utility classes for custom colors */
+/* .bg-primary { background-color: var(--primary); }
+.text-primary { color: var(--primary); }
+.border-primary { border-color: var(--primary); }
+.bg-accent { background-color: var(--accent); }
+.text-accent { color: var(--accent); }
+.bg-background { background-color: var(--background); }
+.text-foreground { color: var(--foreground); } */
+
+/* Glassmorphism effect for backgrounds */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom animations for glassmorphism backgrounds */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.float { animation: float 6s ease-in-out infinite; }
+
+/* Custom Scrollbar Styles */
+html {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* WebKit (Chrome, Safari) */
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 2px solid var(--scrollbar-track); /* Creates a subtle padding effect */
+  background-clip: content-box; /* Ensures border is transparent */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Glassmorphic shadow */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure interactive class for cursor hover */
+html::-webkit-scrollbar-thumb.interactive {
+  cursor: pointer;
+}
+
+
+
+
+.cursor{
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: invert(100%);
+  box-shadow: 0em 0em 1em white, 0em 0em 1em white, 0em 0em 2em white, 0em 0em 2em white, 0em 0em 2em white, 0em 0em 3em white, 0em 0em 3em white, 0em 0em 5em white, 0em 0em 5em white;
+  /* box-shadow: ; */
+}
+
+.trailing-cursor{
+  background-color: white;
+}
+
+
+   
   
   
   @keyframes marquee {
@@ -360,17 +469,7 @@ body{
     background-color: rgba(255, 255, 255, 0.6);
   }
 
-  .project_card{
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 75em;
-    color: black;
-  }
-
-  .dark .project_card{
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 75em;
-    color: white;
-  }
+  
 
   .visit_btn{
     border-color: black;
@@ -379,30 +478,7 @@ body{
     border-color: white;
   }
 
-  .project_img1{
-    background-image: url("/jobex.png");
-    background-position: center;
-  }
-  .project_img2{
-    background-image: url("/admissionportal.png");
-    background-position: center;
-  }
-  .project_img3{
-    background-image: url("/foodie.png");
-    background-position: center;
-  }
-  .project_img4{
-    background-image: url("/todo.png");
-    background-position: center;
-  }
-  .project_img5{
-    background-image: url("/portfolio.png");
-    background-position: center;
-  }
-  .project_img6{
-    background-image: url("/artsy.png");
-    background-position: center;
-  }
+  
 
 .footer{
   background-color: rgba(255, 255, 255, 0.5);
@@ -448,3 +524,40 @@ body{
 .dark .footer .send_email:hover{
   background-color: rgba(222, 155, 255, 0.7);
 } */
+
+.project_card{
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 75em;
+  color: black;
+}
+
+.dark .project_card{
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 75em;
+  color: white;
+}
+
+.project_img1{
+  background-image: url("/jobex.png");
+  background-position: center;
+}
+.project_img2{
+  background-image: url("/admissionportal.png");
+  background-position: center;
+}
+.project_img3{
+  background-image: url("/foodie.png");
+  background-position: center;
+}
+.project_img4{
+  background-image: url("/todo.png");
+  background-position: center;
+}
+.project_img5{
+  background-image: url("/portfolio.png");
+  background-position: center;
+}
+.project_img6{
+  background-image: url("/artsy.png");
+  background-position: center;
+}

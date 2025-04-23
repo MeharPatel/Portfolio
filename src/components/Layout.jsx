@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import CustomCursor from "./CustomCursor";
 
-const Layout = ({ children, isDark, toggleTheme, homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
+const Layout = ({ children, isDark, setIsDark, homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
   const location = useLocation();
 
   // Page transition variants
@@ -38,7 +38,7 @@ const Layout = ({ children, isDark, toggleTheme, homeRef, aboutRef, projectRef, 
       
       {/* Navbar */}
       {/* <Navbar /> */}
-        <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)} homeRef = {homeRef} aboutRef = {aboutRef} projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo}  />
+        <Navbar homeRef = {homeRef} aboutRef = {aboutRef} projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo}  />
       
       
       {/* Main content with page transitions */}
