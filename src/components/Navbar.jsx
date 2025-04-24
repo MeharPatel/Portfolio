@@ -58,9 +58,9 @@ const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
   };
 
   const socials = [
-    { href: 'https://github.com', icon: Github, label: 'GitHub' },
-    { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
-    { href: 'mailto:hello@example.com', icon: Mail, label: 'Email' },
+    { href: 'https://github.com/MeharPatel', icon: Github, label: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/mehar-patel/', icon: Linkedin, label: 'LinkedIn' },
+    { href: 'meharpatel2512@gmail.com', icon: Mail, label: 'Email' },
   ];
 
   return (
@@ -110,16 +110,16 @@ const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
             
               <div className="flex items-center space-x-4 pl-2 border-l border-border">
                 {socials.map((social) => (
-                  <a
+                  <Link
                     key={social.label}
-                    href={social.href}
+                    to={social.href}
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-foreground/70 hover:text-accent transition-colors"
                   >
                     <social.icon size={20} />
-                  </a>
+                  </Link>
                 ))}
               </div>
 
