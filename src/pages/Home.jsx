@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ projectRef, contactRef, scrollTo }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -55,7 +55,7 @@ const Home = () => {
   const floatingOrbs = Array(5).fill(null);
 
   return (
-    <section ref={targetRef} className="relative min-h-screen overflow-hidden">
+    <section id="home" ref={targetRef} className="relative min-h-screen overflow-hidden">
       {/* Animated background orbs */}
       {floatingOrbs.map((_, i) => (
         <motion.div
@@ -121,20 +121,24 @@ const Home = () => {
                 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6"
                 variants={itemVariants}
               >
-                <span className="inline-block from-primary via-accent to-primary bg-[length:200%_auto]">
+                <span className="inline-block home-title">
                   Hi, I'm Mehar Patel
                 </span>
                 <br />
                 <span className="text-3xl md:text-4xl lg:text-5xl text-foreground/80">
-                  I Stack the Full Stack!
+                  Full Stack Developer!
                 </span>
               </motion.h1>
               
               <motion.p 
-                className="text-xl md:text-2xl mb-4 text-foreground/80 max-w-2xl"
-                variants={itemVariants}
-              >
-                Full-stack developer crafting pixel-perfect apps with a side of humor.
+                className="text-xl md:text-xl mb-2 text-foreground/80 max-w-2xl"
+                variants={itemVariants}>
+                Crafting digital experiences through code.
+              </motion.p>
+              <motion.p 
+                className="text-xl md:text-xl mb-4 text-foreground/80 max-w-2xl"
+                variants={itemVariants}>
+                Full-stack developer crafting pixel-perfect websites with a pinch of fantasy.
               </motion.p>
 
             </div>
@@ -194,7 +198,7 @@ const Home = () => {
           </motion.div>
 
           <motion.p
-                className="text-lg italic text-primary/90 mb-8"
+                className="text-lg italic text-primary/90 mb-10"
                 variants={itemVariants}
               >
                 "Oh yeah! I sketch too sometimes haha!"
@@ -202,38 +206,40 @@ const Home = () => {
           
           {/* CTA Buttons */}
           <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-8 mb-6"
             variants={itemVariants}
           >
-            <button asChild className="bg-primary hover:bg-primary/90 text-white px-6 py-6 rounded-full text-lg relative overflow-hidden group">
-              <Link to="/projects">
-                <span className="relative z-10">See My Work</span>
-                <motion.div 
-                  className="absolute inset-0 bg-white/20"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.5 }}
-                />
-              </Link>
+            <button onClick={() => scrollTo(projectRef)} class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
+                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+                    <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+                </span>
+                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">See My Work</span>
             </button>
-            <button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10 px-6 py-6 rounded-full text-lg relative overflow-hidden group">
-              <Link to="/contact">
-                <span className="relative z-10">Get in Touch</span>
-                <motion.div 
-                  className="absolute inset-0 bg-primary/5"
-                  initial={{ scale: 0 }}
-                  whileHover={{ scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </Link>
+            <button onClick={() => scrollTo(contactRef)} class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
+                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+                    <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+                </span>
+                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">See My Work</span>
             </button>
+            {/* <button onClick={() => scrollTo(projectRef)} class="relative px-6 py-3 font-bold text-black group">
+                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
+                <span class="relative">See My Work</span>
+            </button>
+            <button onClick={() => scrollTo(contactRef)} class="relative px-6 py-3 font-bold text-black group">
+                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
+                <span class="relative">Get in Touch</span>
+            </button> */}
           </motion.div>
         </motion.div>
       </div>
 
   
         <motion.div
-              className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-secondary/50 backdrop-blur-md border border-border py-2 px-4 rounded-full hidden md:flex items-center space-x-3"
+              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-secondary/50 backdrop-blur-md border border-border py-2 px-4 rounded-full hidden md:flex items-center space-x-3"
               initial="hidden"
               animate="visible"
               transition={{ duration: 1 }}>

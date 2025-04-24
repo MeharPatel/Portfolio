@@ -56,26 +56,6 @@ const Layout = ({ children, isDark, setIsDark, homeRef, aboutRef, projectRef, co
         </motion.main>
       </AnimatePresence>
       
-      {/* Footer */}
-      <footer className="bg-background border-t border-border py-8 mt-12">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <p className="text-foreground/70">
-                © {new Date().getFullYear()} PixelPurple.dev
-              </p>
-              <p className="text-sm text-muted-foreground mt-1">
-                Built with React, Tailwind CSS & a lot of coffee ☕
-              </p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <a href="#" className="interactive text-foreground/70 hover:text-primary">GitHub</a>
-              <a href="#" className="interactive text-foreground/70 hover:text-primary">LinkedIn</a>
-              <a href="#" className="interactive text-foreground/70 hover:text-primary">Twitter</a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </>
   );
 };

@@ -13,6 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "aos": "^2.3.4",
     "class-variance-authority": "^0.7.1",
+    "emailjs": "^4.0.3",
     "framer-motion": "^12.7.4",
     "lucide-react": "^0.503.0",
     "my-portfolio": "file:",

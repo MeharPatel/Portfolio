@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Github } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const Projects = () => {
   return (
@@ -203,6 +205,28 @@ const Projects = () => {
                     </Link>
                 </div>
             </div>
+                    <motion.div className="text-center mt-10"> {/* variants={itemVariants}> */}
+                        <button
+                        asChild
+                        variant="ghost"
+                        size="lg"
+                        className="group gap-2 hover:bg-white transition-all">
+                            <a
+                            href="https://github.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center"
+                            >
+                            <Github className="h-4 w-4 mr-1 group-hover:scale-110 transition-transform" />
+                            <span className="relative">
+                                View More on GitHub
+                                <span className="absolute -bottom-1 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </span>
+                            </a>
+                        </button>
+                    </motion.div>
+
+            
 
         </div>
   )
