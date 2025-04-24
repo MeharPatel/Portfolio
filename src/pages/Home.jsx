@@ -209,19 +209,19 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
             className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-8 mb-6"
             variants={itemVariants}
           >
-            <button onClick={() => scrollTo(projectRef)} class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
-                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+            <button onClick={() => scrollTo(projectRef)} class="home-btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
+                <span class="home-btn-thing absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
                     <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
                 </span>
-                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                <span class="home-btn-inner absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
                 <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">See My Work</span>
             </button>
-            <button onClick={() => scrollTo(contactRef)} class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
-                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+            <button onClick={() => scrollTo(contactRef)} class="home-btn relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
+                <span class="home-btn-thing absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out rounded group-hover:-mr-4 group-hover:-mt-4">
                     <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
                 </span>
-                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-                <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">See My Work</span>
+                <span class="home-btn-inner absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Get in Touch</span>
             </button>
             {/* <button onClick={() => scrollTo(projectRef)} class="relative px-6 py-3 font-bold text-black group">
                 <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
@@ -239,7 +239,7 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
 
   
         <motion.div
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-secondary/50 backdrop-blur-md border border-border py-2 px-4 rounded-full hidden md:flex items-center space-x-3"
+              className="home-tech-stack absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-secondary/50 backdrop-blur-md border py-2 px-4 rounded-full hidden md:flex items-center space-x-3"
               initial="hidden"
               animate="visible"
               transition={{ duration: 1 }}>
@@ -248,7 +248,7 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
                 {['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'].map((tech, i) => (
                   <motion.span
                     key={tech}
-                    className="text-xs font-medium bg-background/50 border border-border rounded-full px-3 py-1"
+                    className="home-tech-stack-tech text-xs font-medium border rounded-full px-3 py-1"
                     custom={i}
                     variants={techVariants}
                   >
@@ -262,3 +262,4 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
 };
 
 export default Home;
+ 

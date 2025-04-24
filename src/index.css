@@ -303,6 +303,21 @@ body{
   background-color: var(--transparent-bg);
 }
 
+.home-btn{
+  background-color: purple;
+}
+.home-btn-thing{
+  background-color: rgb(104, 0, 104);
+}
+.home-btn-inner{
+  background-color: rgb(65, 0, 65);
+}
+.home-tech-stack, .home-tech-stack-tech{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 800;
+  border-color: var(--text);
+}
+
 
 
 /* Utility classes for custom colors */
