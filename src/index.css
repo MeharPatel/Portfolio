@@ -1,7 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico|Dancing Script|Lumanosimo|Satisfy|Great Vibes|Josefin Sans|Courgette|Mate SC|Quantico'); */
-@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico|Dancing Script|Lumanosimo|Satisfy|Great Vibes|Josefin Sans|Courgette|Mate SC|Quantico');
+/* @import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
 
 @layer base {
   :root {
@@ -44,11 +42,18 @@
     --scrollbar-track: #E9D5FF; /* Light theme scrollbar track */
     --scrollbar-thumb: #A855F7;
 
-    --font-Quantico: "Quantico", sans-serif;
     --transparent-bg: rgba(0, 0, 0, 0.2);
     --hover-transparent-bg: rgba(0, 0, 0, 0.3);
-  }
 
+    --text-grad-color-1: red;
+    --text-grad-color-2: blue;
+
+    --sub-text: black;
+
+    --sub-grad-1: rgb(255, 0, 98);
+    --sub-grad-2: rgb(17, 188, 255);
+  }
+  
   .dark {
     /* Dark theme variables */
     --background: 276 70% 10%;
@@ -78,10 +83,10 @@
     --border: 276 30% 25%;
     --input: 276 30% 25%;
     --ring: 270 95% 75%;
-
+    
     --scrollbar-track: #4C1D95; /* Dark theme scrollbar track */
     --scrollbar-thumb: #C084FC;
-
+    
     --portfolio-back: #200036;
     --portfolio-accent: #54008b;
 
@@ -89,6 +94,14 @@
 
     --transparent-bg: rgba(255, 255, 255, 0.2);
     --hover-transparent-bg: rgba(255, 255, 255, 0.3);
+
+    --text-grad-color-1: red;
+    --text-grad-color-2: blue;
+
+    --sub-text: white;
+    
+    --sub-grad-1: red;
+    --sub-grad-2: blue;
   }
 }
 
@@ -257,10 +270,12 @@
 body{
   background-image: linear-gradient(45deg, var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back));
   color: var(--text);
+  overflow-x: hidden;
 }
 
 .skill-text{
-  font-family: 'Quantico', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
   background-color: var(--transparent-bg);
   border-radius: 12px;
 }
@@ -269,18 +284,21 @@ body{
   background-color: var(--hover-transparent-bg);
 }
 
+.skills-title, .about-title{
+  background-clip: text;
+  text-shadow: none;
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--text-grad-color-1), var(--text-grad-color-2));
+}
+
+.skills-name{
+  background-clip: text;
+  text-shadow: none;
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--sub-grad-1), var(--sub-grad-2));
+}
 
 
-/* Utility classes for custom colors */
-/* .bg-primary { background-color: var(--primary); }
-.text-primary { color: var(--primary); }
-.border-primary { border-color: var(--primary); }
-.bg-accent { background-color: var(--accent); }
-.text-accent { color: var(--accent); }
-.bg-background { background-color: var(--background); }
-.text-foreground { color: var(--foreground); } */
-
-/* Glassmorphism effect for backgrounds */
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -380,51 +398,6 @@ html::-webkit-scrollbar-thumb.interactive {
 
 
 
-  /* .light .home{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  .home .box-cont{
-    display: inline-flex;
-    width: 95em;
-    height: 100%;
-    margin-left: -3.3em;
-    margin-top: -1.6em;
-  }
-  
-  .home .box-cont:nth-child(even){
-    margin-left: -0.7em;
-    margin-top: -1.6em;
-  }
-  
-  .light .home .box-cont .box{
-    height: 6em;
-    width: 5em;
-    margin: 0.15em;
-    background-color: var(--purple-light);
-    -webkit-clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
-    clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
-    transition: all 2s ease-out;
-  }
-  .dark .home .box-cont .box{
-    height: 6em;
-    width: 5em;
-    margin: 0.15em;
-    background-color: var(--purple-dark);
-    -webkit-clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
-    clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
-    transition: all 2s ease-out;
-  }
-  
-  .home .box-cont .box:hover{
-    transition: 0s;
-  }
-  
-  .home .box-cont .box:hover{    background-color: rgba(255, 13, 13, 0.4); }
-  .dark .home .box-cont .box:hover{    background-color: rgba(255, 255, 255, 0.8); } */
   
   
 
@@ -526,15 +499,16 @@ html::-webkit-scrollbar-thumb.interactive {
 } */
 
 .project_card{
-  background-color: rgba(255, 255, 255, 0.3);
-  width: 75em;
-  color: black;
+  background-color: var(--transparent-bg);
+  width: 70em;
+  color: var(--text);
 }
 
-.dark .project_card{
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 75em;
-  color: white;
+.project-title{
+  background-image: linear-gradient(90deg, var(--text-grad-color-1), var(--text-grad-color-2));
+  color: transparent;
+  background-clip: text;
+  /* text-shadow: var(--text) 0.2em 0.2em 0.7em; */
 }
 
 .project_img1{

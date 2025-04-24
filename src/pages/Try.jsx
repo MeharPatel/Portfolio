@@ -71,7 +71,7 @@ const SkillSection = ({ category, index }) => {
         },
       }}
     >
-      <h3 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] to-[var(--accent)]">
+      <h3 className="skills-name text-xl font-bold mb-4">
         {category.name}
       </h3>
       <div className="flex flex-wrap gap-2.5">
@@ -153,15 +153,13 @@ const Try = () => {
             variants={itemVariants}
           >
             Technical{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] to-[var(--accent)]">
+            <span className="skills-title">
               Skills
             </span>
           </motion.h2>
           <motion.p
-            className="text-[rgba(31,41,55,0.7)] dark:text-[rgba(243,244,246,0.7)]"
-            variants={itemVariants}
-          >
-            My skills are so sharp, they could *slice* through any bug!
+            variants={itemVariants}>
+            A comprehensive overview of technologies and tools I work with to build modern applications.
           </motion.p>
         </motion.div>
 

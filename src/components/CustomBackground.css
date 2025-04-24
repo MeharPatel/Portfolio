@@ -1,0 +1,34 @@
+.home{
+    position: absolute;
+    top: 0em;
+    height: 100%;
+    overflow: hidden;
+}
+
+.box-cont{
+    display: inline-flex;
+    margin-left: -5.2em;
+    margin-top: -1.6em;
+  }
+  
+  .box-cont:nth-child(even){
+    margin-left: 0em;
+    margin-top: -1.6em;
+  }
+  
+  .box{
+    height: 6em;
+    width: 5em;
+    margin: 0.15em;
+    background-color: transparent;
+    -webkit-clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+    clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+    transition: all 2s ease-out;
+    z-index: 5;
+  }
+
+  
+  .box:hover{
+    transition: 0s;
+    background-color: var(--transparent-bg);
+  }

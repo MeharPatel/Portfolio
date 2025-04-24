@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import { Route, Routes } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import Layout from './components/Layout'
+import CustomBackground from './components/CustomBackground'
 
 function App() {
   
@@ -35,8 +36,8 @@ function App() {
 
 
       {/* <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)} homeRef = {homeRef} aboutRef = {aboutRef} projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo}  /> */}
-      
       <section ref = {homeRef}>
+      <CustomBackground />
         <Home projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo} />
       </section>
       <section ref = {aboutRef}>

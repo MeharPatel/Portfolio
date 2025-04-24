@@ -48,7 +48,7 @@ const About = () => {
         {/* Page heading */}
         <motion.div variants={itemVariants} className="mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About Me: More Than Just Code
+            About Me: <span className='about-title'> More Than Just Code </span>
           </h1>
           <div className="w-24 h-1 bg-primary mx-auto rounded" />
         </motion.div>
@@ -160,7 +160,7 @@ const About = () => {
         {/* Final quote */}
         <motion.div
           variants={fadeInVariants}
-          className="mt-12 text-center items-center justify-center"
+          className="mt-12 text-center flexflex-col"
         >
           <p className="text-xl italic text-primary">
             "My code's so clean, it sparkles like a byte!"
