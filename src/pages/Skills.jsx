@@ -216,20 +216,26 @@ const Skills = () => {
         </motion.div>
       </motion.div>
 
-      {/* Decorative elements */}
-      <motion.div
-        className="absolute left-10 top-10 w-72 h-72 bg-[var(--primary)]/10 rounded-full blur-3xl"
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        variants={decorVariants}
-      />
-      <motion.div
-        className="absolute right-10 bottom-10 w-80 h-80 bg-[var(--accent)]/10 rounded-full blur-3xl"
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        variants={decorVariants}
-        transition={{ delay: 0.5 }}
-      />
+      <motion.div className="text-center mt-10"> {/* variants={itemVariants}> */}
+                              <button
+                              
+                              variant="ghost"
+                              size="lg"
+                              className="group gap-2 hover:bg-white transition-all">
+                                  <a
+                                  href="https://github.com"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center"
+                                  >
+                                  <span className="relative">
+                                      View My Leetcode Profile!
+                                      <span className="absolute -bottom-1 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                                  </span>
+                                  </a>
+                              </button>
+                          </motion.div>
+      
     </section>
   );
 };

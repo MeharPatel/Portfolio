@@ -117,7 +117,7 @@ const ContactMe = () => {
               className="mb-8"
               variants={itemVariants}
             >
-              Let’s connect and make some *purple pixel* magic! Reach out via the
+              Let’s connect and make some crazy projects! Reach out via the
               form or my socials below.
             </motion.p>
 
@@ -127,10 +127,10 @@ const ContactMe = () => {
                   <Mail className="h-5 w-5 text-[var(--accent)]" />
                 </div>
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:meharpatel2512@gmail.com"
                   className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors interactive"
                 >
-                  hello@example.com
+                  meharpatel2512@gmail.com
                 </a>
               </div>
 
@@ -139,12 +139,12 @@ const ContactMe = () => {
                   <Github className="h-5 w-5 text-[var(--accent)]" />
                 </div>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/MeharPatel"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors interactive"
                 >
-                  github.com/username
+                  github.com/MeharPatel
                 </a>
               </div>
 
@@ -153,12 +153,12 @@ const ContactMe = () => {
                   <Linkedin className="h-5 w-5 text-[var(--accent)]" />
                 </div>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/mehar-patel/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors interactive"
                 >
-                  linkedin.com/in/username
+                  linkedin.com/in/mehar-patel
                 </a>
               </div>
             </motion.div>

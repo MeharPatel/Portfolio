@@ -40,7 +40,7 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
     const socials = [
     { href: 'https://github.com/MeharPatel', icon: Github, label: 'GitHub' },
     { href: 'https://www.linkedin.com/in/mehar-patel/', icon: Linkedin, label: 'LinkedIn' },
-    { href: 'meharpatel2512@gmail.com', icon: Mail, label: 'Email' },
+    { href: 'mailto:meharpatel2512@gmail.com', icon: Mail, label: 'Email' },
   ];
 
   return (
