@@ -56,7 +56,7 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
           {/* Logo */}
           <Link
             onClick = {() => {scrollTo(homeRef)}}
-            className="text-2xl font-bold text-[var(--primary)] interactive whitespace-nowrap text-start"
+            className="nav-name text-2xl font-bold interactive whitespace-nowrap text-start"
           >
             Mehar Portfolio
           </Link>

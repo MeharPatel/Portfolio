@@ -204,7 +204,7 @@ const Skills = () => {
                 className="sub-skills p-6 border border-[rgba(168,85,247,0.2)] rounded-lg backdrop-blur-sm transition-transform hover:transform hover:scale-105 interactive"
                 variants={itemVariants}
               >
-                <p className="sub-skills-name text-4xl mb-2">
+                <p className="text-bold-xl sub-skills-name text-4xl mb-2">
                   {stat.value}
                 </p>
                 <p className="">

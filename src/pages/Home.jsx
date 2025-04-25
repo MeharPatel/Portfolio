@@ -88,9 +88,9 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
             </div>
 
             {/* Right side - Name and intro */}
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left z-10">
               <motion.h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 z-10"
+                className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6"
                 variants={itemVariants}
               >
                 <span className="inline-block home-title">
