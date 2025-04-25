@@ -90,7 +90,7 @@ const Experience = () => {
             className="experience-card relative rounded-xl p-6 shadow-lg border border-[rgba(168,85,247,0.2)] backdrop-blur-sm interactive"
           >
             <div className="flex items-start gap-4">
-              <div className="bg-[var(--primary)]/10 p-3 rounded-lg">
+              <div className="hidden md:block bg-[var(--primary)]/10 p-3 rounded-lg">
                 <Building2 className="w-6 h-6 text-[var(--primary)]" />
               </div>
               <div>
