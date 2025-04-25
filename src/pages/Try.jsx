@@ -1,15 +1,66 @@
-import React from 'react'
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import CustomBackground from "../components/CustomBackground";
 
 const Try = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.2,
+    margin: "0px 0px -50px 0px",
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <section
+      id="hero"
+      ref={ref}
+      className="pt-16 pb-16 md:pt-24 md:pb-24 bg-gradient-to-b from-[var(--background)] to-[rgba(168,85,247,0.1)] relative min-h-screen"
+    >
+      <CustomBackground className="hidden md:block absolute inset-0 z-0" />
+      <motion.div
+        className="container mx-auto px-4 max-w-4xl"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        <motion.div variants={itemVariants} className="text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4">
+            Welcome to My Purple Pixel Portfolio!
+          </h1>
+          <p className="text-lg text-[rgba(31,41,55,0.7)] dark:text-[rgba(243,244,246,0.7)] mb-6">
+            This homepage glows so bold, it’s a *purple pixel* gold!
+          </p>
+          <motion.a
+            href="#contact"
+            variants={itemVariants}
+            className="inline-block px-6 py-3 bg-[var(--primary)] text-[var(--foreground)] rounded-lg hover:bg-[var(--accent)] transition-colors interactive"
+          >
+            Get in Touch
+          </motion.a>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};
 
-export default Try
-
+export default Try;
 
 
 

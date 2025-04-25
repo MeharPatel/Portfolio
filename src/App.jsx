@@ -40,9 +40,9 @@ function App() {
     <Layout homeRef = {homeRef} aboutRef = {aboutRef} experienceRef = {experienceRef} projectRef = {projectRef} skillsRef = {skillsRef} educationRef = {educationRef} contactRef = {contactRef} scrollTo = {scrollTo}>
 
 
-      {/* <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)} homeRef = {homeRef} aboutRef = {aboutRef} projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo}  /> */}
       <section ref = {homeRef}>
-      <CustomBackground />
+      {/* <CustomBackground /> */}
+      {/* <Try /> */}
         <Home projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo} />
       </section>
       <section ref = {aboutRef}>
@@ -60,7 +60,6 @@ function App() {
       <section ref = {educationRef}>
         <Education />
       </section>
-      {/* <Try /> */}
       <section ref = {contactRef}>
         <ContactMe />
       </section>

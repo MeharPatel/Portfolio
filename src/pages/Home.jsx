@@ -55,7 +55,7 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
     <section ref={targetRef} className="w-full relative min-h-screen overflow-hidden">
 
       {/* Main content */}
-      <div className="container relative px-4 md:px-6 py-10 md:py-20">
+      <div className=" relative px-4 md:px-6 py-10 md:py-20">
         <motion.div
           className="max-w-4xl mx-auto"
           variants={containerVariants}
@@ -88,9 +88,9 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
             </div>
 
             {/* Right side - Name and intro */}
-            <div className="text-center md:text-left z-10">
+            <div className="text-center md:text-left">
               <motion.h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6"
+                className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 z-10"
                 variants={itemVariants}
               >
                 <span className="inline-block home-title">

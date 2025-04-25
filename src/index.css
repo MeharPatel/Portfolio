@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico|Dancing Script|Lumanosimo|Satisfy|Great Vibes|Josefin Sans|Courgette|Mate SC|Quantico');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico|Dancing Script|Lumanosimo|Satisfy|Great Vibes|Josefin Sans|Courgette|Mate SC|Quantico|Tagesschrift|Sansation|Fugaz One');
 /* @import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
 
 @layer base {
@@ -280,6 +280,7 @@ body{
   text-shadow: none;
   color: transparent;
   background-image: linear-gradient(90deg, var(--text-grad-color-1), var(--text-grad-color-2));
+  font-family: 'Fugaz One';
 }
 
 .skills-name, .sub-skills-name{

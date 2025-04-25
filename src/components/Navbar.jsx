@@ -51,12 +51,12 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
           : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4 w-full">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             onClick = {() => {scrollTo(homeRef)}}
-            className="text-2xl font-bold text-[var(--primary)] interactive whitespace-nowrap"
+            className="text-2xl font-bold text-[var(--primary)] interactive whitespace-nowrap text-start"
           >
             Mehar Portfolio
           </Link>
