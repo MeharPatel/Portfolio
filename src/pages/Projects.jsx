@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <div id='projects'>
 
-            <div className="mx-8 px-6 py-10 w-full flex justify-center">
+            <div className="px-6 py-10 w-full flex justify-center">
                 <div className="project_card bg-white lg:mx-8 lg:flex lg:shadow-lg rounded-lg">
                     <Link to='https://jobex.onrender.com/' className="lg:w-1/2" title='Visit Website' target="_blank">
                         <div className="project_img1 lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg">

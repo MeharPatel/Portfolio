@@ -176,14 +176,7 @@ const About = () => {
           </Link>
         </motion.div>
       </motion.div>
-
- 
-
-      <Experience />
-      <Skills />
-      <Education />
-
-
+      
     </div>
   )
 }

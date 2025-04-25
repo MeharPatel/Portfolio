@@ -111,10 +111,10 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    /* @apply bg-background text-foreground transition-colors duration-300; */
     cursor: none; /* Hide default cursor for custom cursor */
-    width: 100%;
   }
+
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
@@ -164,21 +164,6 @@
 @keyframes shine {
   from { transform: translateX(-100%); }
   to { transform: translateX(100%); }
-}
-
-/* Container styles */
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
-
-@media (min-width: 1400px) {
-  .container {
-    max-width: 100%;
-  }
 }
 
 /* Animations */
@@ -272,6 +257,7 @@ body{
   background-image: linear-gradient(45deg, var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back), var(--portfolio-accent), var(--portfolio-back));
   color: var(--text);
   overflow-x: hidden;
+  background-repeat: no-repeat;
 }
 
 .skill-text{
@@ -331,9 +317,11 @@ body{
 
 /* Glassmorphism effect for backgrounds */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(179, 4, 4, 0.1);
+  backdrop-filter: blur(10px) important;
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s;
 }
 
 /* Custom animations for glassmorphism backgrounds */
@@ -537,7 +525,7 @@ html { scroll-behavior: smooth; }
 
 .project_card{
   background-color: var(--transparent-bg);
-  width: 70em;
+  /* width: 70em; */
   color: var(--text);
 }
 

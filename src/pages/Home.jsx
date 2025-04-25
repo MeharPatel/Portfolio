@@ -51,36 +51,8 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
     },
   };
 
-  // Moving background animations
-  const floatingOrbs = Array(5).fill(null);
-
   return (
-    <section id="home" ref={targetRef} className="relative min-h-screen overflow-hidden">
-      {/* Animated background orbs */}
-      {floatingOrbs.map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full mix-blend-multiply filter blur-xl opacity-30"
-          animate={{
-            x: [0, Math.random() * 400 - 200],
-            y: [0, Math.random() * 400 - 200],
-            scale: [1, Math.random() * 0.5 + 1],
-          }}
-          transition={{
-            duration: Math.random() * 10 + 10,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-          }}
-          style={{
-            width: `${Math.random() * 300 + 100}px`,
-            height: `${Math.random() * 300 + 100}px`,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            background: `linear-gradient(${Math.random() * 360}deg, var(--primary), var(--accent))`,
-          }}
-        />
-      ))}
+    <section ref={targetRef} className="w-full relative min-h-screen overflow-hidden">
 
       {/* Main content */}
       <div className="container relative px-4 md:px-6 py-10 md:py-20">
@@ -223,16 +195,6 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
                 <span class="home-btn-inner absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
                 <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Get in Touch</span>
             </button>
-            {/* <button onClick={() => scrollTo(projectRef)} class="relative px-6 py-3 font-bold text-black group">
-                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
-                <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
-                <span class="relative">See My Work</span>
-            </button>
-            <button onClick={() => scrollTo(contactRef)} class="relative px-6 py-3 font-bold text-black group">
-                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
-                <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
-                <span class="relative">Get in Touch</span>
-            </button> */}
           </motion.div>
         </motion.div>
       </div>

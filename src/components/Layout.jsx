@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import CustomCursor from "./CustomCursor";
+import Try from "../pages/Try";
 
-const Layout = ({ children, isDark, setIsDark, homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
+const Layout = ({ children, homeRef, aboutRef, experienceRef, projectRef, skillsRef, educationRef, contactRef, scrollTo }) => {
   const location = useLocation();
 
   // Page transition variants
@@ -37,9 +38,8 @@ const Layout = ({ children, isDark, setIsDark, homeRef, aboutRef, projectRef, co
       <CustomCursor />
       
       {/* Navbar */}
-      {/* <Navbar /> */}
-        <Navbar homeRef = {homeRef} aboutRef = {aboutRef} projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo}  />
-      
+        {/* <Navbar homeRef = {homeRef} aboutRef = {aboutRef} experienceRef={experienceRef} projectRef = {projectRef} skillsRef={skillsRef} educationRef={educationRef} contactRef = {contactRef} scrollTo = {scrollTo}  /> */}
+        <Try />
       
       {/* Main content with page transitions */}
       <AnimatePresence mode="wait">

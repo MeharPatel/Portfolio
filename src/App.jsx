@@ -10,6 +10,9 @@ import { Route, Routes } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import Layout from './components/Layout'
 import CustomBackground from './components/CustomBackground'
+import Experience from './pages/Experience'
+import Skills from './pages/Skills'
+import Education from './pages/Education'
 
 function App() {
   
@@ -22,7 +25,10 @@ function App() {
 
   const homeRef = useRef();
   const aboutRef = useRef();
+  const experienceRef = useRef();
   const projectRef = useRef();
+  const skillsRef = useRef();
+  const educationRef = useRef();
   const contactRef = useRef();
 
   const scrollTo = (ref) => {
@@ -31,8 +37,7 @@ function App() {
 
   return (
     <div> 
-    <Layout homeRef = {homeRef} aboutRef = {aboutRef} projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo}>
-
+    <Layout homeRef = {homeRef} aboutRef = {aboutRef} experienceRef = {experienceRef} projectRef = {projectRef} skillsRef = {skillsRef} educationRef = {educationRef} contactRef = {contactRef} scrollTo = {scrollTo}>
 
 
       {/* <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)} homeRef = {homeRef} aboutRef = {aboutRef} projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo}  /> */}
@@ -43,10 +48,19 @@ function App() {
       <section ref = {aboutRef}>
         <About />
       </section>
+      <section ref = {experienceRef}>
+        <Experience />
+      </section>
       <section ref = {projectRef}>
         <Projects />
       </section>
-      <Try />
+      <section ref = {skillsRef}>
+        <Skills />
+      </section>
+      <section ref = {educationRef}>
+        <Education />
+      </section>
+      {/* <Try /> */}
       <section ref = {contactRef}>
         <ContactMe />
       </section>
