@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-// import { Button } from "./ui/button";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import ThemeToggle from "../components/ThemeToggle";
 
 const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educationRef, contactRef, scrollTo }) => {
@@ -18,7 +17,7 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
     scrollTo(ref);
   }
 
-  // Track scroll for glassmorphism effect
+  // Track scroll for navbar styling
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -26,16 +25,6 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Navigation links
-  const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/projects", label: "Projects" },
-    { to: "/skills", label: "Skills" },
-    { to: "/experience", label: "Experience" },
-    { to: "/contact", label: "Contact" },
-  ];
 
   // Framer Motion variants for mobile menu
   const menuVariants = {
@@ -48,6 +37,12 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
     open: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
+    const socials = [
+    { href: 'https://github.com/MeharPatel', icon: Github, label: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/mehar-patel/', icon: Linkedin, label: 'LinkedIn' },
+    { href: 'meharpatel2512@gmail.com', icon: Mail, label: 'Email' },
+  ];
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
@@ -56,69 +51,91 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
           : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-4xl">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
-            onClick={() => scrollTo(homeRef)}
-            className="text-2xl font-bold text-[var(--primary)] interactive whitespace-nowrap">
+            onClick = {() => {scrollTo(homeRef)}}
+            className="text-2xl font-bold text-[var(--primary)] interactive whitespace-nowrap"
+          >
             Mehar Portfolio
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-              
-              <button
+          <div className="hidden md:flex items-center space-x-4">
+            
+              {/* <button
+              onClick={() => {scrollTo(homeRef)}}
                 asChild
-                onClick={() => scrollTo(homeRef)}
                 variant="ghost"
                 className="text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive whitespace-nowrap">
                 Home
-              </button>
+              </button> */}
+
               <button
+              onClick={() => {scrollTo(aboutRef)}}
                 asChild
-                onClick={() => scrollTo(aboutRef)}
                 variant="ghost"
                 className="text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive whitespace-nowrap">
                 About
               </button>
+
               <button
+              onClick={() => {scrollTo(experienceRef)}}
                 asChild
-                onClick={() => scrollTo(experienceRef)}
                 variant="ghost"
                 className="text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive whitespace-nowrap">
                 Experience
               </button>
+
               <button
+              onClick={() => {scrollTo(projectRef)}}
                 asChild
-                onClick={() => scrollTo(projectRef)}
                 variant="ghost"
                 className="text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive whitespace-nowrap">
                 Projects
               </button>
+              
               <button
+              onClick={() => {scrollTo(skillsRef)}}
                 asChild
-                onClick={() => scrollTo(skillsRef)}
                 variant="ghost"
                 className="text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive whitespace-nowrap">
                 Skills
               </button>
+
               <button
+              onClick={() => {scrollTo(educationRef)}}
                 asChild
-                onClick={() => scrollTo(educationRef)}
                 variant="ghost"
                 className="text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive whitespace-nowrap">
                 Education
               </button>
+
               <button
+              onClick={() => {scrollTo(contactRef)}}
                 asChild
-                onClick={() => scrollTo(contactRef)}
                 variant="ghost"
                 className="text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive whitespace-nowrap">
                 Contact
               </button>
-
+            
             <ThemeToggle className="ml-2" />
+
+            <div className="flex items-center space-x-4 pl-2 border-l border-border">
+                {socials.map((social) => (
+                  <Link
+                    key={social.label}
+                    to={social.href}
+                    aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/70 hover:text-accent transition-colors"
+                  >
+                    <social.icon size={20} />
+                  </Link>
+                ))}
+              </div>
           </div>
 
           {/* Mobile Hamburger button */}
@@ -127,7 +144,8 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
             size="icon"
             className="md:hidden text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
             onClick={toggleMenu}
-            aria-label={isOpen ? "Close menu" : "Open menu"}>
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -135,12 +153,11 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
 
       {/* Mobile Menu */}
       <motion.div
-        className={`fixed top-0 left-0 h-full w-full bg-background/95 backdrop-blur-lg glass md:hidden ${
-          isOpen ? "block" : "hidden"
-        }`}
+        className="fixed top-0 left-0 h-screen w-full bg-background/95 backdrop-blur-lg border-l border-[rgba(168,85,247,0.2)] md:hidden"
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
+        style={{ display: isOpen ? "block" : "none" }} // Ensure proper display toggle
       >
         <div className="container mx-auto px-4 max-w-4xl h-full flex flex-col">
           {/* Close button */}
@@ -150,7 +167,8 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
               size="icon"
               className="text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
               onClick={toggleMenu}
-              aria-label="Close menu">
+              aria-label="Close menu"
+            >
               <X size={24} />
             </button>
           </div>
@@ -161,40 +179,78 @@ const Navbar = ({ homeRef, aboutRef, experienceRef, projectRef, skillsRef, educa
             variants={containerVariants}
             initial="closed"
             animate={isOpen ? "open" : "closed"}>
-
-            {navLinks.map((link, index) => (
-                          <motion.div key={link.label} variants={itemVariants} custom={index}>
-                            <button
-                              asChild
-                              variant="ghost"
-                              className="text-xl text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
-                              onClick={toggleMenu}
-                            >
-                              <Link to={link.to}>{link.label}</Link>
-                            </button>
-                          </motion.div>
-                        ))}
             
-              {/* <motion.div key = "Home" variants={itemVariants} custom='1'>
+              {/* <motion.div variants={itemVariants}>
                 <button
                   asChild
                   variant="ghost"
                   className="text-xl text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
-                  onClick={() => clickOnLink(homeRef)}>
+                  onClick={() => {clickOnLink(homeRef)}}>
                   Home
                 </button>
-              </motion.div>
-              <motion.div key = "About" variants={itemVariants} custom='2'>
+              </motion.div> */}
+
+              <motion.div variants={itemVariants}>
                 <button
                   asChild
                   variant="ghost"
                   className="text-xl text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
-                  onClick={() => clickOnLink(aboutRef)}>
+                  onClick={() => {clickOnLink(aboutRef)}}>
                   About
                 </button>
-              </motion.div> */}
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <button
+                  asChild
+                  variant="ghost"
+                  className="text-xl text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
+                  onClick={() => {clickOnLink(experienceRef)}}>
+                  Experience
+                </button>
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <button
+                  asChild
+                  variant="ghost"
+                  className="text-xl text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
+                  onClick={() => {clickOnLink(projectRef)}}>
+                  Projects
+                </button>
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <button
+                  asChild
+                  variant="ghost"
+                  className="text-xl text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
+                  onClick={() => {clickOnLink(skillsRef)}}>
+                  Skills
+                </button>
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <button
+                  asChild
+                  variant="ghost"
+                  className="text-xl text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
+                  onClick={() => {clickOnLink(educationRef)}}>
+                  Education
+                </button>
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <button
+                  asChild
+                  variant="ghost"
+                  className="text-xl text-[var(--foreground)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/[0.1] interactive"
+                  onClick={() => {clickOnLink(contactRef)}}>
+                  Contact
+                </button>
+              </motion.div>
             
-            <motion.div variants={itemVariants} custom={navLinks.length}>
+            <motion.div variants={itemVariants}>
               <ThemeToggle className="mt-4" />
             </motion.div>
           </motion.div>
@@ -226,7 +282,6 @@ export default Navbar;
 
 
 
-
 // // src/components/Navbar.jsx
 // import React, { useState, useEffect } from "react";
 // import { Link, useLocation } from "react-router-dom";
@@ -235,7 +290,7 @@ export default Navbar;
 // // import { Button } from "./ui/button"; // Adjust path if needed
 // import { motion } from "framer-motion";
 
-// const Navbar = ({ homeRef, aboutRef, projectRef, contactRef, scrollTo }) => {
+// const Navbar = () => {
 //   const [isOpen, setIsOpen] = useState(false);
 //   const [scrolled, setScrolled] = useState(false);
 //   const location = useLocation();
@@ -286,11 +341,7 @@ export default Navbar;
 //     closed: { opacity: 0, y: -10 },
 //   };
 
-//   const socials = [
-//     { href: 'https://github.com/MeharPatel', icon: Github, label: 'GitHub' },
-//     { href: 'https://www.linkedin.com/in/mehar-patel/', icon: Linkedin, label: 'LinkedIn' },
-//     { href: 'meharpatel2512@gmail.com', icon: Mail, label: 'Email' },
-//   ];
+
 
 //   return (
 //     <nav
@@ -337,20 +388,7 @@ export default Navbar;
 
 //               <ThemeToggle className="mr-2" />
             
-//               <div className="flex items-center space-x-4 pl-2 border-l border-border">
-//                 {socials.map((social) => (
-//                   <Link
-//                     key={social.label}
-//                     to={social.href}
-//                     aria-label={social.label}
-//                     target="_blank"
-//                     rel="noopener noreferrer"
-//                     className="text-foreground/70 hover:text-accent transition-colors"
-//                   >
-//                     <social.icon size={20} />
-//                   </Link>
-//                 ))}
-//               </div>
+//               
 
 //           </div>
 

@@ -38,8 +38,7 @@ const Layout = ({ children, homeRef, aboutRef, experienceRef, projectRef, skills
       <CustomCursor />
       
       {/* Navbar */}
-        {/* <Navbar homeRef = {homeRef} aboutRef = {aboutRef} experienceRef={experienceRef} projectRef = {projectRef} skillsRef={skillsRef} educationRef={educationRef} contactRef = {contactRef} scrollTo = {scrollTo}  /> */}
-        <Try />
+        <Navbar homeRef = {homeRef} aboutRef = {aboutRef} experienceRef={experienceRef} projectRef = {projectRef} skillsRef={skillsRef} educationRef={educationRef} contactRef = {contactRef} scrollTo = {scrollTo}  />
       
       {/* Main content with page transitions */}
       <AnimatePresence mode="wait">

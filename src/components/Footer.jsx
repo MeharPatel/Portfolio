@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { ArrowUp } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 
-const Footer = () => {
+const Footer = ({ scrollTo, homeRef }) => {
   // Ref for the footer section
   const ref = useRef(null);
   // Detect when footer is in view
@@ -52,7 +52,7 @@ const Footer = () => {
               PixelPun
             </p>
             <p className="text-sm">
-              Built with *purple pixel* love!
+              Built by <span className="footer-name">Mehar Patel!</span>
             </p>
           </motion.div>
 
@@ -66,7 +66,7 @@ const Footer = () => {
           {/* Back to Top */}
           <motion.div variants={itemVariants} className="mt-6 md:mt-0">
             <a
-              href="#home"
+              onClick={() => {scrollTo(homeRef)}}
               className="p-3 bg-[var(--primary)]/10 rounded-full hover:bg-[var(--primary)]/20 transition-colors inline-block interactive"
               aria-label="Back to top"
             >

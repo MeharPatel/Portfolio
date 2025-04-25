@@ -64,7 +64,7 @@ function App() {
       <section ref = {contactRef}>
         <ContactMe />
       </section>
-      <Footer />
+      <Footer scrollTo = {scrollTo} homeRef = {homeRef} />
     </Layout>
     </div>
   )

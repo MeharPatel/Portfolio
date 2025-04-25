@@ -61,7 +61,7 @@ const Experience = () => {
   return (
     <section
       ref={ref}
-      className="container mx-auto px-4 py-16 md:px-6 md:py-24 bg-gradient-to-b from-[var(--background)] to-[rgba(168,85,247,0.1)] relative"
+      className="container mx-auto px-4 pt-10 pb-20 md:px-6 md:pt-4 md:pb-32 relative"
     >
       <motion.div
         variants={containerVariants}
@@ -75,7 +75,7 @@ const Experience = () => {
             My Journey in Tech
           </h1>
           <p className="text-lg mb-4">
-            My tech journey’s so epic, it’s *stacked* with purple pixels!
+            My tech journey’s just getting started and I'm not planing to stop anytime soon!
           </p>
           <div className="w-24 h-1 bg-[var(--primary)] mx-auto rounded" />
         </motion.div>

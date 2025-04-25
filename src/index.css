@@ -52,6 +52,8 @@
 
     --sub-grad-1: rgb(255, 0, 98);
     --sub-grad-2: rgb(17, 188, 255);
+
+    --cursor-color: transparent
   }
   
   .dark {
@@ -102,6 +104,8 @@
     
     --sub-grad-1: red;
     --sub-grad-2: blue;
+
+    --cursor-color: rgba(255, 255, 255, 0.4)
   }
 }
 
@@ -304,6 +308,10 @@ body{
   border-color: var(--text);
 }
 
+.bio-card, .journey-card, .not-coding-card, .visit_btn{
+  border-color: var(--text);
+}
+
 
 
 /* Utility classes for custom colors */
@@ -317,10 +325,10 @@ body{
 
 /* Glassmorphism effect for backgrounds */
 .glass {
-  background: rgba(179, 4, 4, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px) important;
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
   transition: all 0.2s;
 }
 
@@ -373,7 +381,7 @@ html { scroll-behavior: smooth; }
 
 
 .cursor{
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--cursor-color);
   backdrop-filter: invert(100%);
   box-shadow: 0em 0em 1em white, 0em 0em 1em white, 0em 0em 2em white, 0em 0em 2em white, 0em 0em 2em white, 0em 0em 3em white, 0em 0em 3em white, 0em 0em 5em white, 0em 0em 5em white;
   /* box-shadow: ; */
@@ -386,6 +394,11 @@ html { scroll-behavior: smooth; }
 .see-my-work{
   border: 2px solid var(--text);
   border-radius: 0.6em;
+}
+
+.footer-name{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
 }
 
 
@@ -447,81 +460,7 @@ html { scroll-behavior: smooth; }
     height: 25em;
     margin-left: 8em;
   }
-
-  .skill_card{
-    background-color: var(--purple-light);
-  }
-  .dark .skill_card{
-    background-color: var(--purple-dark);
-  }
-
-  .skill_card_inner{
-    background-color: rgb(255, 255, 255);
-  }
-
-  .skill_card:hover{
-    background-color: rgba(255, 255, 255, 0.6);
-  }
-
-  .experience_card{
-    background-color: rgba(255, 255, 255, 0.6);
-  }
-
-  
-
-  .visit_btn{
-    border-color: black;
-  }
-  .dark .visit_btn{
-    border-color: white;
-  }
-
-  
-
-.footer{
-  background-color: rgba(255, 255, 255, 0.5);
-  color: black;
-}
-
-.footer-inp{
-  background-color: rgba(0, 0, 0, 0.2);
-  color: black;
-}
-
-.footer-inp::placeholder{
-  color: black;
-}
-
-.dark .footer{
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
-}
-
-.dark .footer-inp{
-  background-color: rgba(255, 255, 255, 0.3);
-  color: white;
-}
-
-.dark .footer-inp::placeholder{
-  color: white;
-}
-
-.footer .send_email{
-  background-color: rgba(179, 25, 255, 0.9);
-  border-bottom: 4px solid rgba(95, 0, 143, 0.9);
-  border-right: 4px solid rgba(95, 0, 143, 0.9);
-}
-.footer .send_email:hover{
-  background-color: rgba(179, 25, 255, 0.7);
-}
-.dark .footer .send_email{
-  background-color: rgba(194, 72, 255, 0.9);
-  border-bottom: 4px solid rgba(44, 0, 66, 0.9);
-  border-right: 4px solid rgba(37, 0, 56, 0.9);
-}
-.dark .footer .send_email:hover{
-  background-color: rgba(222, 155, 255, 0.7);
-} */
+ */
 
 .project_card{
   background-color: var(--transparent-bg);
