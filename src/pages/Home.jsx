@@ -1,5 +1,5 @@
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -51,6 +51,35 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
     },
   };
 
+    const words = ["Hello There!", "Mehar Here!"];
+    const [wordIndex, setWordIndex] = useState(0);
+    const [charIndex, setCharIndex] = useState(0);
+    const [currentWord, setCurrentWord] = useState(words[0]);
+    const [isDeleting, setIsDeleting] = useState(false);
+  
+    useEffect(() => {
+      const type = () => {
+        if (isDeleting) {
+          setCharIndex((prev) => prev - 1);
+          if (charIndex === 0) {
+            setIsDeleting(false);
+            setWordIndex((prev) => (prev + 1) % words.length);
+            setCurrentWord(words[(wordIndex + 1) % words.length]);
+          }
+        } else {
+          setCharIndex((prev) => prev + 1);
+          if (charIndex === currentWord.length) {
+            setIsDeleting(true);
+          }
+        }
+      };
+  
+      const timer = setInterval(type, 100);
+  
+      return () => clearInterval(timer); // Cleanup on unmount
+    }, [charIndex, isDeleting, wordIndex, words, currentWord]);
+  
+
   return (
     <section ref={targetRef} className="w-full relative min-h-screen overflow-hidden">
 
@@ -90,9 +119,13 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
             {/* Right side - Name and intro */}
             <div className="text-center md:text-left z-10">
               <motion.h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6"
-                variants={itemVariants}
-              >
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6"
+                variants={itemVariants}>
+              <span className="home-title">
+                {currentWord.substring(0, charIndex)}
+                <span className="animate-blink">|</span>
+              </span>
+              <br />
                 <span className="inline-block home-title">
                   Hi, I'm Mehar Patel
                 </span>
