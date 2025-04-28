@@ -42,7 +42,7 @@ function App() {
 
       <section ref = {homeRef}>
       {/* <CustomBackground /> */}
-      <Try />
+      {/* <Try /> */}
         <Home projectRef = {projectRef} contactRef = {contactRef} scrollTo = {scrollTo} />
       </section>
       <section ref = {aboutRef}>

@@ -286,7 +286,7 @@ body{
   background-color: var(--hover-transparent-bg);
 }
 
-.skills-title, .about-title, .experience-title, .home-title, .connect-title{
+.skills-title, .about-title, .experience-title, .home-title, .connect-title, .project-title{
   background-clip: text;
   text-shadow: none;
   color: transparent;
@@ -453,33 +453,16 @@ html { scroll-behavior: smooth; }
   
   
 
-/*   
-  .sec-head{
-    font-weight: 700;
-  }
-  
-  #edu ul{
-    margin-left: 8em;
-  }
-  
-  #edu ul li::marker{
-    font-size: 2em;
-  }
-  
-  #edu .edu-container{
-    display: flex;
-  }
-  
-  #edu .edu-container img{
-    height: 25em;
-    margin-left: 8em;
-  }
- */
 
-.project_card{
+
+.project-card{
+  background-image:url('https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80')
+}
+
+.project-text{
   background-color: var(--transparent-bg);
-  /* width: 70em; */
-  color: var(--text);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .project-title{

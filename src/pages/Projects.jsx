@@ -23,18 +23,7 @@ const Projects = () => {
                         This website is available at https://jobex.onrender.com/.
                         </p>
                         <div className="mt-8">
-                            <Link to='https://jobex.onrender.com/' class="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
-                                <span class="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
-                                </span>
-
-                                <p class="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
-                                duration-200">Visit</p>
-
-                                <span class="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Now!</span>
-
-                                <span class="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
-                                </span>
-                            </Link>
+                            
                         </div>
                     </div>
                 </div>
@@ -50,16 +39,16 @@ const Projects = () => {
                         This is a Website built for students, students can apply for any of the mentioned courses and admin can give comments and accept or reject the application. This website was built using HTML, CSS, Js and NodeJs. This website is available at https://admissionportal-bewz.onrender.com/
                         </p>
                         <div className="mt-8">
-                            <Link to='https://admissionportal-bewz.onrender.com/' class="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
-                                <span class="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
+                            <Link to='https://admissionportal-bewz.onrender.com/' className="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
+                                <span className="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
                                 </span>
 
-                                <p class="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
+                                <p className="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
                                 duration-200">Visit</p>
 
-                                <span class="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Now!</span>
+                                <span className="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Now!</span>
 
-                                <span class="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
+                                <span className="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
                                 </span>
                             </Link>
                         </div>
@@ -88,16 +77,16 @@ const Projects = () => {
                             <br />
                         </p>
                         <div className="mt-8">
-                            <Link to='https://foodie-frontend-website.netlify.app/' class="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
-                                <span class="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
+                            <Link to='https://foodie-frontend-website.netlify.app/' className="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
+                                <span className="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
                                 </span>
 
-                                <p class="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
+                                <p className="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
                                 duration-200">Visit</p>
 
-                                <span class="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Now!</span>
+                                <span className="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Now!</span>
 
-                                <span class="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
+                                <span className="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
                                 </span>
                             </Link>
                         </div>
@@ -118,16 +107,16 @@ const Projects = () => {
                             <br />
                         </p>
                         <div className="mt-8">
-                            <Link to='https://github.com/MeharPatel2512/To-Do_List_MERN' class="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
-                                <span class="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
+                            <Link to='https://github.com/MeharPatel2512/To-Do_List_MERN' className="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
+                                <span className="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
                                 </span>
 
-                                <p class="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
+                                <p className="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
                                 duration-200">Visit</p>
 
-                                <span class="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Repo!</span>
+                                <span className="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Repo!</span>
 
-                                <span class="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
+                                <span className="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
                                 </span>
                             </Link>
                         </div>
@@ -156,16 +145,16 @@ const Projects = () => {
                             <br />
                         </p>
                         <div className="mt-8">
-                            <Link to='' class="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
-                                <span class="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
+                            <Link to='' className="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
+                                <span className="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
                                 </span>
 
-                                <p class="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
+                                <p className="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
                                 duration-200">Visit</p>
 
-                                <span class="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Now!</span>
+                                <span className="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Now!</span>
 
-                                <span class="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
+                                <span className="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
                                 </span>
                             </Link>
                         </div>
@@ -185,16 +174,16 @@ const Projects = () => {
                             <br />
                         </p>
                         <div className="mt-8">
-                            <Link to='https://github.com/MeharPatel/Frontend_Project_Artsy' class="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
-                                <span class="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
+                            <Link to='https://github.com/MeharPatel/Frontend_Project_Artsy' className="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
+                                <span className="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
                                 </span>
 
-                                <p class="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
+                                <p className="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
                                 duration-200">Visit</p>
 
-                                <span class="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Repo!</span>
+                                <span className="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Repo!</span>
 
-                                <span class="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
+                                <span className="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
                                 </span>
                             </Link>
                         </div>
@@ -205,6 +194,49 @@ const Projects = () => {
                     </Link>
                 </div>
             </div>
+                    
+
+
+                    <motion.div className="text-center mt-6 lg:mx-24 md:mx-20"> {/* variants={itemVariants}> */}
+                        
+                    <div className='grid gap-4 md:grid-cols-1 items-center'>
+
+                    <div>
+                        <div className="lg:py-12 lg:flex lg:justify-center">
+                            <div className="lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+                                <Link className="lg:w-1/2" to='https://jobex.onrender.com/' title='Visit Website' target="_blank">
+                                    <div className="project_img1 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
+                                </Link>
+                                <div className="project-text py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
+                                    <h2 className="text-3xl text-gray-800 font-bold"><span className='project-title'>Jobex</span> Website </h2>
+                                    <p className="mt-4">This is a Website built for employees and recruiters, recruiters can announce jobs and employees can apply for them and recruiters can accept or reject the application. 
+                        This website was built using HTML, CSS, Js and NodeJs. 
+                        This website is available at https://jobex.onrender.com/.</p>
+                                    <div className="mt-8 flex justify-center">
+                                    <Link to='https://jobex.onrender.com/' className="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100" target='_blank'>
+                                <span className="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500">
+                                </span>
+
+                                <p className="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
+                                duration-200">Visit</p>
+
+                                <span className="group-hover:translate-x-0  group-hover:opacity-100 absolute  translate-x-full opacity-0  transition-all duration-200">Now!</span>
+
+                                <span className="visit_btn group-hover:w-full absolute right-0 h-full w-5  border-y border-r transition-all duration-500">
+                                </span>
+                            </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+
+
+                   
+
+                    </div>
+                    </motion.div>
+
                     <motion.div className="text-center mt-10"> {/* variants={itemVariants}> */}
                         <button
                         asChild
@@ -225,7 +257,6 @@ const Projects = () => {
                             </a>
                         </button>
                     </motion.div>
-
             
 
         </div>

@@ -126,10 +126,10 @@ const Home = ({ projectRef, contactRef, scrollTo }) => {
                 <span className="animate-blink">|</span>
               </span>
               <br />
-                <span className="inline-block home-title">
+                {/* <span className="inline-block home-title">
                   Hi, I'm Mehar Patel
                 </span>
-                <br />
+                <br /> */}
                 <span className="text-3xl md:text-4xl lg:text-5xl text-foreground/80">
                   Full Stack Developer!
                 </span>
