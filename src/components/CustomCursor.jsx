@@ -3,13 +3,10 @@ import React, { useState, useEffect } from "react";
 const CustomCursor = () => {
   // State to track cursor position
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  // State to track if cursor is hovering over an interactive element
   const [isHovering, setIsHovering] = useState(false);
-  // State to track cursor visibility
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Function to update cursor position
     const updatePosition = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
       

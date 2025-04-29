@@ -7,11 +7,13 @@ const Projects = () => {
   return (
     <div>
       <motion.div className="text-center mt-6 lg:mx-24 md:mx-20">
-        
+        <div className="projects-title inline-block font-bold text-center md:text-left z-10 text-4xl md:text-5xl lg:text-6xl">
+            My Projects
+        </div>
         <div className="grid gap-4 md:grid-cols-1 items-center">
-          <div className=''>
+          <div>
             <div className="lg:py-12 lg:flex lg:justify-center">
-              <div className="lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+              <div className="project-card lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
                 <Link
                   className="lg:w-1/2"
                   to="https://jobex.onrender.com/"
@@ -56,11 +58,9 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div>
             <div className="lg:py-12 lg:flex lg:justify-center">
-              <div className="lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+              <div className="project-card lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
                 <Link
                   className="lg:w-1/2"
                   to="https://admissionportal-bewz.onrender.com/"
@@ -106,11 +106,9 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div>
             <div className="lg:py-12 lg:flex lg:justify-center">
-              <div className="lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+              <div className="project-card lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
                 <Link
                   className="lg:w-1/2"
                   to="https://foodie-frontend-website.netlify.app/"
@@ -154,15 +152,13 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div>
             <div className="lg:py-12 lg:flex lg:justify-center">
-              <div className="lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+              <div className="project-card lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
                 <Link
                   className="lg:w-1/2"
                   to="https://github.com/MeharPatel2512/To-Do_List_MERN"
-                  title="Visit Website"
+                  title="Visit Github Repo"
                   target="_blank"
                 >
                   <div className="project_img4 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
@@ -200,11 +196,9 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div>
             <div className="lg:py-12 lg:flex lg:justify-center">
-              <div className="lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+              <div className="project-card lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
                 <Link
                   className="lg:w-1/2"
                   to="https://jobex.onrender.com/"
@@ -247,15 +241,13 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div>
             <div className="lg:py-12 lg:flex lg:justify-center">
-              <div className="lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+              <div className="project-card lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
                 <Link
                   className="lg:w-1/2"
                   to="https://github.com/MeharPatel/Frontend_Project_Artsy"
-                  title="Visit Website"
+                  title="Visit Github Repo"
                   target="_blank"
                 >
                   <div className="project_img6 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
@@ -299,7 +291,6 @@ const Projects = () => {
       </motion.div>
 
       <motion.div className="text-center mt-10">
-        {" "}
         {/* variants={itemVariants}> */}
         <button
           asChild
