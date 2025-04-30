@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <div className='mb-12'>
       <motion.div className="text-center mt-6 lg:mx-24 md:mx-20">
-        <div className="projects-title inline-block font-bold text-center md:text-left z-10 text-4xl md:text-5xl lg:text-6xl">
+        <div className="projects-title inline-block mb-4 font-bold text-center md:text-left z-10 text-4xl md:text-5xl lg:text-6xl">
             My Projects
         </div>
         <div className="grid gap-4 md:grid-cols-1 items-center mx-8">
@@ -290,7 +290,7 @@ const Projects = () => {
         <Link to="https://github.com" className="relative px-6 py-3 font-bold group" target='_blank'>
             <span className="project-btn absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></span>
             <span className="project-btn-border absolute inset-0 w-full h-full border-4"></span>
-            <span className="relative">
+            <span className="relative text-xl">
             {/* <Github className="relative h-4 w-4" /> */}
               View More on Github</span>
         </Link>

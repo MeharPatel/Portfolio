@@ -71,7 +71,7 @@ const Experience = () => {
       >
         {/* Page heading */}
         <motion.div variants={itemVariants} className="mb-12 text-center">
-          <h1 className="experience-title text-4xl md:text-5xl font-bold mb-4 text-[var(--foreground)]">
+          <h1 className="experience-title text-4xl md:text-5xl font-bold mb-4">
             My Journey in Tech
           </h1>
           <p className="text-lg mb-4">

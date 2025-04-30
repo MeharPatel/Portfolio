@@ -3,7 +3,9 @@ import React from 'react'
 const Education = () => {
   return (
     <div>
-        <h2 className="text-4xl mb-4 text-center">Education</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="edu-title">Qualification</span>
+        </h2>
         <div className="flex flex-col md:flex-row items-center md:items-start p-6 gap-10 px-24">      
 
         <div className="flex flex-col gap-6 w-full md:w-1/2">
@@ -32,7 +34,7 @@ const Education = () => {
             </div>
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="hidden md:block w-full md:w-1/2 flex justify-center">
             <img 
             src="/edu6.jpg" 
             alt="Education" 

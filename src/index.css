@@ -37,12 +37,12 @@
     --portfolio-back: #E9D5FF;
     --portfolio-accent: #d09dff;
     
-    --text: #35005a;
+    --text: #290046;
 
     --scrollbar-track: #E9D5FF; /* Light theme scrollbar track */
     --scrollbar-thumb: #A855F7;
 
-    --transparent-bg: rgba(0, 0, 0, 0.2);
+    --transparent-bg: rgba(0, 0, 0, 0.15);
     --hover-transparent-bg: rgba(0, 0, 0, 0.3);
 
     --text-grad-color-1: rgb(255, 0, 106);
@@ -57,6 +57,11 @@
     --btn-transparent-bg: rgba(255, 101, 127, 0.5);
 
     --cursor-color: transparent;
+
+    --home-btn-bg: rgb(255, 0, 179);
+    --home-btn-thing: rgb(206, 0, 96);
+    --home-btn-inner: rgb(219, 0, 128);
+    --home-btn-text: white;
   }
   
   .dark {
@@ -95,7 +100,7 @@
     --portfolio-back: #200036;
     --portfolio-accent: #54008b;
     
-    --text: #d09dff;
+    --text: #e2c3ff;
     
     --transparent-bg: rgba(255, 255, 255, 0.2);
     --hover-transparent-bg: rgba(255, 255, 255, 0.3);
@@ -111,7 +116,12 @@
 
     --btn-transparent-bg: rgba(126, 236, 255, 0.3);
 
-    --cursor-color: rgba(255, 255, 255, 0.4)
+    --cursor-color: rgba(255, 255, 255, 0.4);
+
+    --home-btn-bg: rgb(255, 98, 208);
+    --home-btn-thing: rgb(255, 70, 156);
+    --home-btn-inner: rgb(255, 58, 196);
+    --home-btn-text: black;
   }
 }
 
@@ -286,7 +296,7 @@ body{
   background-color: var(--hover-transparent-bg);
 }
 
-.skills-title, .about-title, .experience-title, .home-title, .connect-title, .project-title, .projects-title{
+.skills-title, .about-title, .experience-title, .home-title, .connect-title, .project-title, .projects-title, .edu-title{
   background-clip: text;
   text-shadow: none;
   color: transparent;
@@ -297,7 +307,7 @@ body{
   font-family: 'Black Ops One';
 }
 
-.skills-name, .sub-skills-name{
+.skills-name, .sub-skills-name, .sub-skill-title{
   background-clip: text;
   text-shadow: none;
   color: transparent;
@@ -309,13 +319,16 @@ body{
 }
 
 .home-btn{
-  background-color: purple;
+  background-color: var(--home-btn-bg);
 }
 .home-btn-thing{
-  background-color: rgb(104, 0, 104);
+  background-color: var(--home-btn-thing);
 }
 .home-btn-inner{
-  background-color: rgb(65, 0, 65);
+  background-color: var(--home-btn-inner);
+}
+.home-btn-text{
+  color: var(--home-btn-text);
 }
 .home-tech-stack, .home-tech-stack-tech{
   font-family: 'Josefin Sans', sans-serif;

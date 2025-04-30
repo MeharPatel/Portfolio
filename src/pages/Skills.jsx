@@ -90,7 +90,7 @@ const SkillSection = ({ category, index }) => {
           <div
             key={skill}
             variant="secondary"
-            className="skill-text py-1.5 px-3 text-base transition-colors interactive"
+            className="skill-text py-1.5 px-3 text-lg transition-colors interactive"
           >
             {skill}
           </div>
@@ -146,7 +146,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-8 md:py-8 bg-gradient-to-b from-[var(--background)] to-[rgba(168,85,247,0.2)] relative"
+      className="py-8 md:py-8 relative"
       ref={ref}
     >
       <motion.div
@@ -160,12 +160,12 @@ const Skills = () => {
           variants={itemVariants}
         >
           <motion.h2
-            className="text-3xl md:text-4xl font-bold mb-4"
+            className="text-4xl md:text-5xl font-bold mb-4"
             variants={itemVariants}
           >
             Technical <span className="skills-title">Skills</span>
           </motion.h2>
-          <motion.p variants={itemVariants}>
+          <motion.p variants={itemVariants} className="text-lg">
             A comprehensive overview of technologies and tools I work with to
             build modern applications.
           </motion.p>
@@ -184,7 +184,7 @@ const Skills = () => {
         {/* Coding Activity Section */}
         <motion.div className="mt-20 max-w-4xl mx-auto" variants={itemVariants}>
           <motion.h3
-            className="text-2xl font-bold mb-6 text-center"
+            className="sub-skill-title text-3xl font-bold mb-6 text-center"
             variants={itemVariants}
           >
             Coding Activity
@@ -207,7 +207,7 @@ const Skills = () => {
                 <p className="text-bold-xl sub-skills-name text-4xl mb-2">
                   {stat.value}
                 </p>
-                <p className="">{stat.label}</p>
+                <p className="text-lg">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -222,7 +222,7 @@ const Skills = () => {
         >
           <span className="leetcode-btn absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></span>
           <span className="project-btn-border absolute inset-0 w-full h-full border-4"></span>
-          <span className="relative">
+          <span className="relative text-xl">
             View My Leetcode Profile
           </span>
         </Link>

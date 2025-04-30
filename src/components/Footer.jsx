@@ -52,13 +52,13 @@ const Footer = ({ scrollTo, homeRef }) => {
               PixelPun
             </p>
             <p className="text-sm">
-              Built by <span className="footer-name">Mehar Patel!</span>
+              Built by <span className="footer-name">Mehar Patel</span>
             </p>
           </motion.div>
 
           {/* Copyright */}
           <motion.div variants={itemVariants} className="flex items-center">
-            <p className="text-sm text-[rgba(31,41,55,0.6)] dark:text-[rgba(243,244,246,0.6)]">
+            <p className="text-sm">
               © {new Date().getFullYear()} All rights reserved.
             </p>
           </motion.div>
@@ -67,10 +67,10 @@ const Footer = ({ scrollTo, homeRef }) => {
           <motion.div variants={itemVariants} className="mt-6 md:mt-0">
             <a
               onClick={() => {scrollTo(homeRef)}}
-              className="p-3 bg-[var(--primary)]/10 rounded-full hover:bg-[var(--primary)]/20 transition-colors inline-block interactive"
+              className="p-3 rounded-full transition-colors inline-block interactive"
               aria-label="Back to top"
             >
-              <ArrowUp className="h-4 w-4 text-[var(--primary)]" />
+              <ArrowUp className="h-4 w-4" />
             </a>
           </motion.div>
         </div>

@@ -157,7 +157,7 @@ const ContactMe = () => {
                   to="https://www.linkedin.com/in/mehar-patel/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors interactive"
+                  className="transition-colors interactive"
                 >
                   linkedin.com/in/mehar-patel
                 </Link>
@@ -165,18 +165,18 @@ const ContactMe = () => {
             </motion.div>
 
             <motion.div
-              className="p-5 border border-[rgba(168,85,247,0.2)] rounded-lg bg-gray-100/20 dark:bg-slate-800/20 backdrop-blur-sm"
+              className="p-5 border rounded-lg"
               variants={itemVariants}
             >
-              <h3 className="font-bold text-lg mb-2 text-[var(--foreground)]">
+              <h3 className="font-bold text-lg mb-2">
                 Current Status
               </h3>
-              <p className="text-[rgba(31,41,55,0.7)] dark:text-[rgba(243,244,246,0.7)] mb-3">
+              <p className="mb-3">
                 Available for freelance projects and full-time positions.
               </p>
               <div className="flex items-center gap-2">
                 <span className="h-3 w-3 bg-green-500 rounded-full animate-pulse"></span>
-                <span className="text-sm text-[rgba(31,41,55,0.7)] dark:text-[rgba(243,244,246,0.7)]">
+                <span className="text-sm">
                   Response time: within 24 hours
                 </span>
               </div>
@@ -187,7 +187,7 @@ const ContactMe = () => {
           <motion.div className="relative" variants={itemVariants}>
             <form ref={form}
               onSubmit={sendEmail}
-              className="p-6 md:p-8 border border-[rgba(168,85,247,0.2)] rounded-lg backdrop-blur-sm relative z-10 bg-gray-100/10 dark:bg-slate-800/10"
+              className="p-6 md:p-8 border rounded-lg relative z-10"
             >
               <div className="mb-6">
                 <label
@@ -244,12 +244,11 @@ const ContactMe = () => {
               >
                 {isSubmitting ? (
                   <>
-                    <div className="h-4 w-4 border-2 border-white border-r-transparent rounded-full animate-spin"></div>
+                    <div className="h-4 w-4 border-2 border-r-transparent rounded-full animate-spin"></div>
                     Sending...
                   </>
                 ) : (
                   <>
-                    {/* <Send className="h-4 w-4" /> */}
                     Send Message
                   </>
                 )}
@@ -258,13 +257,13 @@ const ContactMe = () => {
 
             {/* Decorative elements */}
             <motion.div
-              className="absolute -z-10 top-10 right-10 w-40 h-40 bg-[var(--primary)]/20 rounded-full blur-3xl"
+              className="absolute -z-10 top-10 right-10 w-40 h-40 rounded-full blur-3xl"
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               variants={decorVariants}
             />
             <motion.div
-              className="absolute -z-10 -bottom-5 -left-5 w-40 h-40 bg-[var(--accent)]/20 rounded-full blur-3xl"
+              className="absolute -z-10 -bottom-5 -left-5 w-40 h-40 rounded-full blur-3xl"
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               variants={decorVariants}
