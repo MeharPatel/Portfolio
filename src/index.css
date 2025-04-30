@@ -449,7 +449,8 @@ html { scroll-behavior: smooth; }
 
 
 .project-card{
-  width: 90rem;
+  width: 100%;
+  margin-bottom: 2em;
 }
 
 .project-text{
@@ -463,6 +464,14 @@ html { scroll-behavior: smooth; }
   color: transparent;
   background-clip: text;
   /* text-shadow: var(--text) 0.2em 0.2em 0.7em; */
+}
+
+.project-btn{
+  background-color: var(--transparent-bg);
+}
+
+.project-btn-border{
+  border-color: var(--text);
 }
 
 .project_img1{

@@ -5,12 +5,12 @@ import { motion } from 'framer-motion'
 
 const Projects = () => {
   return (
-    <div>
+    <div className='mb-12'>
       <motion.div className="text-center mt-6 lg:mx-24 md:mx-20">
         <div className="projects-title inline-block font-bold text-center md:text-left z-10 text-4xl md:text-5xl lg:text-6xl">
             My Projects
         </div>
-        <div className="grid gap-4 md:grid-cols-1 items-center">
+        <div className="grid gap-4 md:grid-cols-1 items-center mx-8">
           <div>
             <div className="lg:py-12 lg:flex lg:justify-center">
               <div className="project-card lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
@@ -71,8 +71,7 @@ const Projects = () => {
                 </Link>
                 <div className="project-text py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
                   <h2 className="text-3xl text-gray-800 font-bold">
-                    <span className="project-title">Admission Portal</span>{" "}
-                    Website{" "}
+                    <span className="project-title">Admission Portal</span>{" "}Website
                   </h2>
                   <p className="mt-4">
                     This is a Website built for students, students can apply for
@@ -290,27 +289,15 @@ const Projects = () => {
         </div>
       </motion.div>
 
-      <motion.div className="text-center mt-10">
-        {/* variants={itemVariants}> */}
-        <button
-          asChild
-          variant="ghost"
-          size="lg"
-          className="group gap-2 hover:bg-white transition-all"
-        >
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center"
-          >
-            <Github className="h-4 w-4 mr-1 group-hover:scale-110 transition-transform" />
+      <motion.div className="text-center mt-2">
+       
+        <Link to="https://github.com" className="relative px-6 py-3 font-bold group" target='_blank'>
+            <span className="project-btn absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+            <span className="project-btn-border absolute inset-0 w-full h-full border-4"></span>
             <span className="relative">
-              View More on GitHub
-              <span className="absolute -bottom-1 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-            </span>
-          </a>
-        </button>
+            {/* <Github className="relative h-4 w-4" /> */}
+              View More on Github</span>
+        </Link>
       </motion.div>
     </div>
   );
