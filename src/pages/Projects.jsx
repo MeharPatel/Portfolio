@@ -23,7 +23,7 @@ const Projects = () => {
                   <div className="project_img1 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
                 </Link>
                 <div className="project-text py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                  <h2 className="text-3xl text-gray-800 font-bold">
+                  <h2 className="text-3xl font-bold">
                     <span className="project-title">Jobex</span> Website{" "}
                   </h2>
                   <p className="mt-4">
@@ -70,7 +70,7 @@ const Projects = () => {
                   <div className="project_img2 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
                 </Link>
                 <div className="project-text py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                  <h2 className="text-3xl text-gray-800 font-bold">
+                  <h2 className="text-3xl font-bold">
                     <span className="project-title">Admission Portal</span>{" "}Website
                   </h2>
                   <p className="mt-4">
@@ -117,7 +117,7 @@ const Projects = () => {
                   <div className="project_img3 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
                 </Link>
                 <div className="project-text py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                  <h2 className="text-3xl text-gray-800 font-bold">
+                  <h2 className="text-3xl font-bold">
                     <span className="project-title">Foodie</span> Website{" "}
                   </h2>
                   <p className="mt-4">
@@ -163,7 +163,7 @@ const Projects = () => {
                   <div className="project_img4 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
                 </Link>
                 <div className="project-text py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                  <h2 className="text-3xl text-gray-800 font-bold">
+                  <h2 className="text-3xl font-bold">
                     <span className="project-title">To-Do</span> List{" "}
                   </h2>
                   <p className="mt-4">
@@ -207,7 +207,7 @@ const Projects = () => {
                   <div className="project_img5 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
                 </Link>
                 <div className="project-text py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                  <h2 className="text-3xl text-gray-800 font-bold">
+                  <h2 className="text-3xl font-bold">
                     <span className="project-title">Portfolio</span> Website{" "}
                   </h2>
                   <p className="mt-4">
@@ -252,7 +252,7 @@ const Projects = () => {
                   <div className="project_img6 h-64 bg-cover lg:rounded-lg lg:h-full"></div>
                 </Link>
                 <div className="project-text py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                  <h2 className="text-3xl text-gray-800 font-bold">
+                  <h2 className="text-3xl font-bold">
                     <span className="project-title">Artsy</span> Website{" "}
                   </h2>
                   <p className="mt-4">
@@ -264,14 +264,10 @@ const Projects = () => {
                     <Link
                       to="https://github.com/MeharPatel/Frontend_Project_Artsy"
                       className="group p-5 cursor-pointer relative text-xl font-normal border-0 flex items-center justify-center bg-transparent h-auto w-[170px] overflow-hidden transition-all duration-100"
-                      target="_blank"
-                    >
+                      target="_blank">
                       <span className="visit_btn group-hover:w-full absolute left-0 h-full w-5 border-y border-l transition-all duration-500"></span>
-
                       <p
-                        className="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all
-                                duration-200"
-                      >
+                        className="group-hover:opacity-0 group-hover:translate-x-[-100%] absolute translate-x-0 transition-all duration-200">
                         Visit
                       </p>
 

@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser"
+import { Link } from "react-router-dom";
 
 // Mock useToast hook (replace with your implementation)
 const useToast = () => {
@@ -126,40 +127,40 @@ const ContactMe = () => {
                 <div className="p-2 bg-[var(--primary)]/10 rounded-full">
                   <Mail className="h-5 w-5 text-[var(--accent)]" />
                 </div>
-                <a
-                  href="mailto:meharpatel2512@gmail.com"
+                <Link
+                  to="mailto:meharpatel2512@gmail.com"
                   className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors interactive"
                 >
                   meharpatel2512@gmail.com
-                </a>
+                </Link>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-[var(--primary)]/10 rounded-full">
                   <Github className="h-5 w-5 text-[var(--accent)]" />
                 </div>
-                <a
-                  href="https://github.com/MeharPatel"
+                <Link
+                  to="https://github.com/MeharPatel"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors interactive"
                 >
                   github.com/MeharPatel
-                </a>
+                </Link>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-[var(--primary)]/10 rounded-full">
                   <Linkedin className="h-5 w-5 text-[var(--accent)]" />
                 </div>
-                <a
-                  href="https://www.linkedin.com/in/mehar-patel/"
+                <Link
+                  to="https://www.linkedin.com/in/mehar-patel/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors interactive"
                 >
                   linkedin.com/in/mehar-patel
-                </a>
+                </Link>
               </div>
             </motion.div>
 
@@ -191,7 +192,7 @@ const ContactMe = () => {
               <div className="mb-6">
                 <label
                   htmlFor="to_name"
-                  className="block mb-2 text-sm font-medium text-[var(--foreground)]"
+                  className="block mb-2 text-sm font-bold"
                 >
                   Your Name
                 </label>
@@ -200,14 +201,14 @@ const ContactMe = () => {
                   name="to_name"
                   placeholder="Enter Your Name"
                   required
-                  className="bg-gray-100/50 dark:bg-slate-800/50 border-[rgba(168,85,247,0.2)] text-[var(--foreground)]"
+                  className="contact-input px-4"
                 />
               </div>
 
               <div className="mb-6">
                 <label
                   htmlFor="to_email"
-                  className="block mb-2 text-sm font-medium text-[var(--foreground)]"
+                  className="block mb-2 text-sm font-bold"
                 >
                   Your Email
                 </label>
@@ -216,14 +217,14 @@ const ContactMe = () => {
                   name="to_email"
                   placeholder="Enter Your email id"
                   required
-                  className="bg-gray-100/50 dark:bg-slate-800/50 border-[rgba(168,85,247,0.2)] text-[var(--foreground)]"
+                  className="contact-input px-4"
                 />
               </div>
 
               <div className="mb-6">
                 <label
                   htmlFor="message"
-                  className="block mb-2 text-sm font-medium text-[var(--foreground)]"
+                  className="block mb-2 text-sm font-bold"
                 >
                   Your Message
                 </label>
@@ -232,7 +233,7 @@ const ContactMe = () => {
                   placeholder="Your Message"
                   rows="5"
                   required
-                  className="contact-textarea"
+                  className="contact-textarea px-6"
                 />
               </div>
 
@@ -248,7 +249,7 @@ const ContactMe = () => {
                   </>
                 ) : (
                   <>
-                    <Send className="h-4 w-4" />
+                    {/* <Send className="h-4 w-4" /> */}
                     Send Message
                   </>
                 )}

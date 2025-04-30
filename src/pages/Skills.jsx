@@ -1,6 +1,7 @@
 // frontend/front/src/pages/Skills.jsx
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Skill categories data
 const skillCategories = [
@@ -162,28 +163,26 @@ const Skills = () => {
             className="text-3xl md:text-4xl font-bold mb-4"
             variants={itemVariants}
           >
-            Technical{" "}
-            <span className="skills-title">
-              Skills
-            </span>
+            Technical <span className="skills-title">Skills</span>
           </motion.h2>
-          <motion.p
-            variants={itemVariants}>
-            A comprehensive overview of technologies and tools I work with to build modern applications.
+          <motion.p variants={itemVariants}>
+            A comprehensive overview of technologies and tools I work with to
+            build modern applications.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           {skillCategories.map((category, index) => (
-            <SkillSection key={category.name} category={category} index={index} />
+            <SkillSection
+              key={category.name}
+              category={category}
+              index={index}
+            />
           ))}
         </div>
 
         {/* Coding Activity Section */}
-        <motion.div
-          className="mt-20 max-w-4xl mx-auto"
-          variants={itemVariants}
-        >
+        <motion.div className="mt-20 max-w-4xl mx-auto" variants={itemVariants}>
           <motion.h3
             className="text-2xl font-bold mb-6 text-center"
             variants={itemVariants}
@@ -193,7 +192,8 @@ const Skills = () => {
 
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
-            variants={containerVariants}>
+            variants={containerVariants}
+          >
             {[
               { value: "25+", label: "Git Repositories" },
               { value: "600+", label: "Leetcode Quenstions Solved" },
@@ -201,41 +201,32 @@ const Skills = () => {
             ].map((stat) => (
               <motion.div
                 key={stat.label}
-                className="sub-skills p-6 border border-[rgba(168,85,247,0.2)] rounded-lg backdrop-blur-sm transition-transform hover:transform hover:scale-105 interactive"
+                className="sub-skills p-6 border border-[rgba(168,85,247,0.2)] rounded-lg backdrop-blur-sm transition-transform hover:transform hover:scale-105 interactive font-extrabold"
                 variants={itemVariants}
               >
                 <p className="text-bold-xl sub-skills-name text-4xl mb-2">
                   {stat.value}
                 </p>
-                <p className="">
-                  {stat.label}
-                </p>
+                <p className="">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
       </motion.div>
 
-      <motion.div className="text-center mt-10"> {/* variants={itemVariants}> */}
-                              <button
-                              
-                              variant="ghost"
-                              size="lg"
-                              className="group gap-2 hover:bg-white transition-all">
-                                  <a
-                                  href="https://github.com"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center"
-                                  >
-                                  <span className="relative">
-                                      View My Leetcode Profile!
-                                      <span className="absolute -bottom-1 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-                                  </span>
-                                  </a>
-                              </button>
-                          </motion.div>
-      
+      <motion.div className="text-center mt-16 mb-10">
+        <Link
+          to="https://leetcode.com/u/MeharPatel/"
+          className="relative px-6 py-3 font-bold group"
+          target="_blank"
+        >
+          <span className="leetcode-btn absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+          <span className="project-btn-border absolute inset-0 w-full h-full border-4"></span>
+          <span className="relative">
+            View My Leetcode Profile
+          </span>
+        </Link>
+      </motion.div>
     </section>
   );
 };

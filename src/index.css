@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico|Limelight|Lumanosimo|Satisfy|Great Vibes|Josefin Sans|Courgette|Mate SC|Quantico|Kings|Parisienne');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico|Limelight|Lumanosimo|Satisfy|Great Vibes|Josefin Sans|Courgette|Mate SC|Quantico|Kings|Parisienne|Black Ops One');
 /* @import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
-
-.skills-title, .about-title, .experience-title, .home-title, .connect-title{
-  /* font-family: 'Kings'; */
-}
-
 
 @layer base {
   :root {
@@ -56,8 +51,10 @@
     
     --sub-text: black;
     
-    --sub-grad-1: rgb(47, 0, 255);
-    --sub-grad-2: rgb(17,  227, 255);
+    --sub-grad-1: rgb(255, 48, 151);
+    --sub-grad-2: rgb(40, 0, 151);
+
+    --btn-transparent-bg: rgba(255, 101, 127, 0.5);
 
     --cursor-color: transparent;
   }
@@ -103,14 +100,16 @@
     --transparent-bg: rgba(255, 255, 255, 0.2);
     --hover-transparent-bg: rgba(255, 255, 255, 0.3);
     
-    --text-grad-color-1: rgb(0, 173, 204);
+    --text-grad-color-1: rgb(0, 225, 255);
     --text-grad-color-2: rgb(0, 255, 0);
     --shadow: rgba(0, 0, 0, 0.6);
 
     --sub-text: white;
     
-    --sub-grad-1: red;
-    --sub-grad-2: blue;
+    --sub-grad-1: yellow;
+    --sub-grad-2: rgb(255, 103, 128);
+
+    --btn-transparent-bg: rgba(126, 236, 255, 0.3);
 
     --cursor-color: rgba(255, 255, 255, 0.4)
   }
@@ -291,10 +290,11 @@ body{
   background-clip: text;
   text-shadow: none;
   color: transparent;
+  /* padding: 0.6em; */
   background-image: linear-gradient(90deg, var(--text-grad-color-1), var(--text-grad-color-2));
   /* text-shadow: ; */
   filter: drop-shadow(0.1em 0.1em 0.05em var(--shadow));
-  /* font-family: 'Limelight'; */
+  font-family: 'Black Ops One';
 }
 
 .skills-name, .sub-skills-name{
@@ -466,8 +466,8 @@ html { scroll-behavior: smooth; }
   /* text-shadow: var(--text) 0.2em 0.2em 0.7em; */
 }
 
-.project-btn{
-  background-color: var(--transparent-bg);
+.project-btn, .leetcode-btn{
+  background-color: var(--btn-transparent-bg);
 }
 
 .project-btn-border{
@@ -497,4 +497,25 @@ html { scroll-behavior: smooth; }
 .project_img6{
   background-image: url("/artsy.png");
   background-position: center;
+}
+
+.contact-input{
+  background-color: var(--transparent-bg);
+  border-radius: 3px;
+  border: 1px solid var(--text);
+}
+
+.contact-input::placeholder, .contact-textarea::placeholder{
+  color: var(--text);
+}
+
+.contact-textarea{
+  background-color: var(--transparent-bg);
+  border-radius: 3px;
+  border: 1px solid var(--text);
+}
+
+.send_email{
+  background-color: var(--transparent-bg);
+  border: 1px solid var(--text);
 }
